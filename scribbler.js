@@ -12,7 +12,9 @@ var getAll = function (selector, scope) {
 // setup typewriter effect in the terminal demo
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
-  var txt = `./welcome.sh`;
+  var txt = './welcome.sh \n'+
+  'Welcome to my page! On here you will find my recent projects & resume. \n'+
+  'Feel free to contact me anytime!\n'
   var speed = 80;
 
   function typeItOut () {
@@ -23,7 +25,21 @@ if (document.getElementsByClassName('demo').length > 0) {
     }
   }
 
-  setTimeout(typeItOut, 1800);
+  v
+
+  var toggle = false;
+  function flashing_Command () {
+    if(toggle){
+    document.getElementsByClassName('demo')[0].innerHTML += 'maxkernchen@maxkernchen.github.io:_'
+    }
+    else{
+      document.getElementsByClassName('demo')[0].innerHTML += 'maxkernchen@maxkernchen.github.io:'
+    }
+    toggle = !toggle;
+  }
+  
+  while(true){
+    setTimeout(flashing_Command,100);
 }
 
 // toggle tabs on codeblock
