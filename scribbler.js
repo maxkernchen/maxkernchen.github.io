@@ -9,38 +9,55 @@ var getAll = function (selector, scope) {
   return scope.querySelectorAll(selector);
 };
 
+function type(){
 // setup typewriter effect in the terminal demo
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
   var txt = './welcome.sh \n'+
   'Welcome to my page! On here you will find my recent projects & resume. \n'+
-  'Feel free to contact me anytime!\n'
-  var speed = 80;
+  'Feel free to contact me anytime!\n';
+  var speed = 40;
 
   function typeItOut () {
     if (i < txt.length) {
       document.getElementsByClassName('demo')[0].innerHTML += txt.charAt(i);
       i++;
       setTimeout(typeItOut, speed);
+    }else if(i==txt.length){
+      //add flashing block
+      document.getElementsByClassName('demo')[0].innerHTML += 'maxkernchen@maxkernchen.github.io:';
+      
+      flashing_Command();
+     
+
     }
   }
 
-  v
-
-  var toggle = false;
-  function flashing_Command () {
-    if(toggle){
-    document.getElementsByClassName('demo')[0].innerHTML += 'maxkernchen@maxkernchen.github.io:_'
-    }
-    else{
-      document.getElementsByClassName('demo')[0].innerHTML += 'maxkernchen@maxkernchen.github.io:'
-    }
-    toggle = !toggle;
+  setTimeout(typeItOut,1800);
   }
   
-  while(true){
-    setTimeout(flashing_Command,100);
 }
+
+type()
+
+var toggle = false;
+ 
+  function flashing_Command () {
+    
+    if(toggle){
+      var tempString = document.getElementsByClassName('demo')[0].innerHTML;
+      tempString = tempString.substr(0,tempString.length -1);
+    document.getElementsByClassName('demo')[0].innerHTML = tempString;
+    }
+    else{
+      document.getElementsByClassName('demo')[0].innerHTML += '█';
+    }
+    toggle = !toggle;
+    setTimeout(flashing_Command, 500);
+  
+  }
+
+
 
 // toggle tabs on codeblock
 window.addEventListener("load", function() {
