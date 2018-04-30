@@ -38,7 +38,7 @@ if (document.getElementsByClassName('demo').length > 0) {
   
 }
 
-type()
+type();
 
 var toggle = false;
  

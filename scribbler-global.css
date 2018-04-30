@@ -11,6 +11,7 @@
   --dark-gray-color: #444D56; 
   --bg-color: #F8F8FA;
   --code-bg-color: #F0E8E8;
+  --common-button-color: rgb(22, 94, 82);
 }
 
 /* normalized */
@@ -138,6 +139,38 @@ hr {
 .button--primary:hover::after {
   transform: rotate(90deg);
 }
+
+.button--common {
+  padding: 10px 22px;
+  background-color: var(--common-button-color);
+  color: white;
+  position: relative;
+  text-decoration: none;
+  border: 0;
+  transition: all .3s ease-out;
+}
+
+.button--common:after {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--accent-color-light);
+  right: -0.4rem;
+  top: -0.4rem;
+  transition: all 0.3s ease-out;
+}
+
+.button--common:hover {
+  text-shadow: 0px 1px 1px var(--accent-color-dark);
+  color: white;
+  transform: translate3D(0, -3px, 0);
+}
+
+.button--common:hover::after {
+  transform: rotate(90deg);
+}
+
 
 .button--secondary {
   padding: 10px 22px;
