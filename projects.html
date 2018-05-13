@@ -4,17 +4,20 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Scribbler Documentation - a code documentation page template for codrops</title>
+    <title>Max Kernchen - Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="scribbler-global.css">
     <link rel="stylesheet" href="scribbler-doc.css">
     <link rel="author" href="humans.txt">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+      </script>
   </head>
   <body>
     <div class="doc__bg"></div>
     <nav class="header">
-      <h1 class="logo">Scribbler <span class="logo__thin">Doc</span></h1>
+      <h1 class="logo">Max Kernchen <span class="logo__thin">Projects</span></h1>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
         <li class="menu__item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
@@ -33,9 +36,24 @@
           <h3 class="section__title">WifiRanger</h3>
           <p>Download WifiRanger</p>
           <a href="WifiRanger.zip" class="button--common">Download</a>
-          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <p>WifiRanger is a C# WPF project which calculates the approximate percentage 
+            of Wifi coverage for a given router and floor plan.
+          It uses Walmart JSON Web Services to retrieve up to date prices 
+          and store links for a current list of 10 popular routers.
+        
+        </p>
+        
+          <p id='wifiranger_calc'> Wifi coverage is calculate by a modified 
+            <a class="link--light" href ="https://en.wikipedia.org/wiki/Free-space_path_loss#Free-space_path_loss_in_decibels">
+              free-space path loss</a> formula which adds the natural log of the router's power to it.
+              Some basic real world testing using simple Android applications proved this method to be fairly accurate. Below is the current formula
+               WifiRanger uses to calculate the distance, in one direction, covered in meters.
+               </p>
+             <p>$$m = 10^{\frac{(27.55 - (20 \cdot \log(frequencyMHz) + |dBm| +\ln(power)))}{20}}$$</p>
+             <p>Frequency is between 2400 - 5800 megahertz for most routers, dBm or decibel-milliwatts is 
+               usually -57 or -58 which is the lowest Wifi strength for reliable packet delivery.
+               Power is different for every router, most of the time higher power = higher range. 
+             </p>
           <hr />
           
           <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
@@ -43,7 +61,7 @@
           <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
           <hr />
          
-          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
+          <p >Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
           <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
           <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
           <hr />
