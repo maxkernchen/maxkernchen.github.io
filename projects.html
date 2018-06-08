@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="scribbler-global.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+     crossorigin="anonymous">
     <link rel="stylesheet" href="scribbler-doc.css">
     <link rel="author" href="humans.txt">
     <script type="text/javascript" async
@@ -20,30 +22,29 @@
       <h1 class="logo">Max Kernchen <span class="logo__thin">Projects</span></h1>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a href="" class="link link--dark"><i class="fab fa-github"></i> Github</a></li>
         <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
       </ul>
     </nav>
     <div class="wrapper">
       <aside class="doc__nav">
         <ul>
-          <li class="js-btn selected">WifiRanger</li>
-          <li class="js-btn">Project2</li>
+          <li class="js-btn selected">WifiRanger - C#</li>
+          <li class="js-btn">Spot My Mood - Java(Android)</li>
         </ul>
       </aside>
       <article class="doc__content">
         <section class="js-section">
           <h3 class="section__title">WifiRanger</h3>
-          <p>Download WifiRanger</p>
-          <a href="WifiRanger.zip" class="button--common">Download</a>
+          
           <p>WifiRanger is a C# WPF project which calculates the approximate percentage 
-            of Wifi coverage for a given router and floor plan.
+            of WiFi coverage for a given router and floor plan.
           It uses Walmart JSON Web Services to retrieve up to date prices 
           and store links for a current list of 10 popular routers.
         
         </p>
         
-          <p id='wifiranger_calc'> Wifi coverage is calculate by a modified 
+          <p id='wifiranger_calc'> WiFi coverage is calculate by a modified 
             <a class="link--light" href ="https://en.wikipedia.org/wiki/Free-space_path_loss#Free-space_path_loss_in_decibels">
               free-space path loss</a> formula which adds the natural log of the router's power to it.
               Some basic real world testing using simple Android applications proved this method to be fairly accurate. Below is the current formula
@@ -54,27 +55,39 @@
                usually -57 or -58 which is the lowest Wifi strength for reliable packet delivery.
                Power is different for every router, most of the time higher power = higher range. 
              </p>
+             <p>
+               You can download WifiRanger below, all that should be needed is to extract all files
+                to the same directory and run WifiRanger.exe. Below you will also find a link to the
+                 WifiRanger GitHub page.
+             </p>
+
+             <br>
+            
+             
+          <a href="WifiRanger.zip" class="button--common">Download</a>
+        
+          <a href="https://github.com/maxkernchen/WifiRanger" class="button--github">WifiRanger GitHub <i class="fab fa-github"></i></a>
           <hr />
           
-          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-          <hr />
-         
-          <p >Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-          <hr />
+      
           
         </section>
 
         <section class="js-section">
-            <h3 class="section__title">Project2 </h3>
-            <p>Download Project2</p>
-            <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-            <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-            <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-            <hr />
+            <h3 class="section__title">Spot My Mood </h3>
+            <p>Spot My Mood is an Android application which allows users to take a self image and display current emotions.
+              These emotions are then connected to a Spotify playlist to best match them.
+            </p>
+            <p>Spot My Mood is powered by Microsoft's Emotion API <a class="link--light" href="https://azure.microsoft.com/en-us/services/cognitive-services/emotion/">Emotion API </a> </p>
+            <p>An image is turned into a bitmap which is sent to Microsoft's Emotion Web Service. Then results are returned in an ArrayList which contains 8 emotions that are ranked from 0 to 1.
+              The higher the number the more the emotion is seen. </p>
+            <p>These results are then converted into a visual graph using <a class="link--light" href="https://github.com/PhilJay/MPAndroidChart" >MPAndroidChart </a> 
+               Below are PlayStore links and Spot My Mood's GitHub
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.kernchen.spotmymood&hl=en_GB" class="button--common">Spot My Mood PlayStore <i class="fab fa-google-play"></i></a>
+            <a href="https://github.com/maxkernchen/SpotMyMood" style="margin-left: 50px" class="button--github">Spot My Mood GitHub <i class="fab fa-github"></i></a>
+
+            <hr/>
            
             <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
             <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
@@ -86,7 +99,9 @@
         
     </div>
 
-    <footer class="footer">Scribbler is a free HTML template created exclusively for <a href="https://tympanus.net/codrops/?p=33686" target="_blank" class="link link--light">Codrops</a>.</footer>
+    <footer class="footer">This website is based upon an static HTML5 template provided by Amie Chen via 
+        <a href="https://tympanus.net/codrops/2018/01/12/freebie-scribbler-website-template-html-sketch/" 
+        target="_blank" class="link link--light">Codrops</a>.</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="scribbler.js"></script>
