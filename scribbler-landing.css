@@ -27,6 +27,7 @@ nav {
 
 .hero__title {
   font-weight: 900;
+  font-family: 'Roboto', sans-serif;
   color: var(--primary-color);
 }
 
@@ -164,6 +165,12 @@ nav {
   margin: 3rem auto 2rem auto;
   text-align: center;
 }
+.profile_pic{
+
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
 
 @media (max-width: 750px) {
   .hero__terminal {
@@ -187,4 +194,5 @@ nav {
   .keybinding {
     font-size: 0.8rem;
   }
+
 }

@@ -11,7 +11,7 @@
   --dark-gray-color: #444D56; 
   --bg-color: #F8F8FA;
   --code-bg-color: #F0E8E8;
-  --link-color:rgb(192, 109, 98);
+  --link-color:rgb(18, 132, 223);
   --common-button-color: rgb(22, 94, 82);
   --github-button-color:rgb(94, 41, 87);
 }
@@ -22,6 +22,7 @@ html, body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
   background-color: white;
+  
 }
 
 p {
@@ -235,7 +236,7 @@ hr {
 }
 
 .link--light {
-  color: var(--accent-color);
+  color: var(--link-color);
 }
 
 /* menu */

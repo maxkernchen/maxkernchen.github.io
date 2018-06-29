@@ -93,7 +93,7 @@ window.addEventListener("load", function() {
   }
 });
 
-//in page scrolling for documentaiton page
+//in page scrolling for project page
 var btns = getAll('.js-btn');
 var sections = getAll('.js-section');
 
