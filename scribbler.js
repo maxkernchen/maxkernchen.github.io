@@ -111,7 +111,7 @@ function smoothScrollTo(element, event) {
 
   window.scrollTo({
     'behavior': 'smooth',
-    'top': element.offsetTop - 20,
+    'top': element.offsetTop,
     'left': 0
   });
 }
@@ -136,6 +136,12 @@ if (btns.length && sections.length > 0) {
 
   btns[3].addEventListener('click', function (event) {
     smoothScrollTo(sections[3], event);
+  });
+
+  // adding one more menu item for smooth scroll
+
+  btns[4].addEventListener('click', function (event) {
+    smoothScrollTo(sections[4], event);
   });
 }
 

@@ -26,8 +26,15 @@ html, body {
 }
 
 p {
-  font-weight: 300;
+  font-weight: 500;
   color: #4A4A4A;
+}
+
+li {
+   
+    font-weight: 500;
+    color: #4A4A4A;
+  
 }
 
 a, a:hover {
