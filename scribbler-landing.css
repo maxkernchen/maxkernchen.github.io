@@ -5,9 +5,7 @@
   margin: 1rem 0 0 1rem;
 }
 
-nav {
-  background-color: var(--bg-color);
-}
+
 .link__other{
   color: lightblue;
 }
@@ -21,7 +19,7 @@ nav {
 /* hero section */
 .hero {
   text-align: center;
-  background-color: var(--bg-color);
+  background-color: var(--light-gray-color);
   padding: 2rem 0 10rem 0;
 }
 
