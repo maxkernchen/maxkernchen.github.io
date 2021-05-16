@@ -11,6 +11,7 @@
     --dark-gray-color: #444D56; 
     --bg-color: #F8F8FA;
     --code-bg-color: #F0E8E8;
+    --terminal-green: #41FF00; 
     --link-color:rgb(18, 132, 223);
     --common-button-color: rgb(22, 94, 82);
     --github-button-color:rgb(94, 41, 87);
@@ -102,24 +103,8 @@
     display: block;
   }
   
-  /* code */
-  .code {
-    border-radius: 3px;
-    font-family: Space Mono, SFMono-Regular, Menlo,Monaco, Consolas, Liberation Mono, Courier New, monospace;
-    background: var(--bg-color);
-    border: 1px solid var(--code-bg-color);
-    color: var(--primary-color-light);
-  }
+ 
   
-  .code--block {
-    white-space: pre-line;
-    padding: 0 1.5rem;
-  }
-  
-  .code--inline {
-    padding: 3px 6px;
-    font-size: 80%;
-  }
   
   /* buttons */
   .button--primary {
@@ -227,7 +212,20 @@
     border-color: var(--accent-color);
     color: var(--accent-color);
   }
-  
+  /* grid layout for all containing divs */
+  .container { 
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 10% 40% 50%;
+    row-gap: 100px;
+    
+    grid-template-areas:
+        "menu menu ."
+        ". header ." 
+        ". terminal .";
+       
+  }
+
   /* links */
   .link {
     text-decoration: none;
@@ -245,13 +243,19 @@
   .link--light {
     color: var(--link-color);
   }
+  .header{
   
-  /* menu */
-  nav {
-    display: grid;
-    grid-template-columns: 500px auto; 
+    text-align: center;
     background-color: var(--light-gray-color);
+    grid-area: header;
+    justify-self: center;
   
+
+  }
+  
+  
+  nav {
+    background-color: var(--light-gray-color);
   }
   
   .menu {
@@ -260,6 +264,22 @@
     overflow: hidden;
     list-style: none;
     background-color: var(--light-gray-color);
+    grid-area: menu;
+  }
+  .terminal {
+    width: 90%;
+   
+    text-align: left;
+    color: white;
+    background-color: black;
+    padding-left: 1rem;
+    border-radius: 4px;
+    justify-self: center;
+   
+    grid-area: terminal;
+    
+    animation: fadeUp 2s;
+    box-shadow: 0px 12px 36.8px 9.2px rgba(0, 0, 0, 0.1);
   }
   
   .toggle {
@@ -316,7 +336,7 @@
     display: none;
   }
   
-  /* table */
+
   table {
     border-collapse: collapse;
     width: 100%;

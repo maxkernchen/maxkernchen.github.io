@@ -16,12 +16,8 @@
   border-radius:4px;
   box-shadow: 0px 12px 36.8px 9.2px rgba(0, 0, 0, 0.1);
 }
-/* hero section */
-.hero {
-  text-align: center;
-  background-color: var(--light-gray-color);
-  padding: 2rem 0 10rem 0;
-}
+
+
 
 .hero__title {
   font-weight: 900;
@@ -33,24 +29,8 @@
   margin: -1rem auto 2rem auto;
 }
 
-.hero__terminal {
-  width: 60%;
-  margin: -11rem auto 3rem auto;
-  text-align: left;
-  color: white;
-  padding: 0 1rem;
-  border-radius: 4px;
-  background-color: #232323;
-  min-height: 285px;
-  
-  animation: fadeUp 2s;
-  box-shadow: 0px 12px 36.8px 9.2px rgba(0, 0, 0, 0.1);
-}
 
-.hero__terminal pre {
-  white-space: pre-line;
-  padding-top: 1rem;
-}
+  
 
 /* feature section */
 .feature {
@@ -164,9 +144,6 @@
   text-align: center;
 }
 .profile_pic{
-
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 50%;
 }
 

@@ -10,8 +10,8 @@ var getAll = function (selector, scope) {
 };
 
 function type(){
-// setup typewriter effect in the terminal demo
-if (document.getElementsByClassName('demo').length > 0) {
+// setup typewriter effect
+if (document.getElementsByClassName('terminal-typing').length > 0) {
   var i = 0;
   var txt = './welcome.sh \n'+
   'Welcome to my page! On here you will find my recent projects & resume. \n'+
@@ -20,12 +20,12 @@ if (document.getElementsByClassName('demo').length > 0) {
 
   function typeItOut () {
     if (i < txt.length) {
-      document.getElementsByClassName('demo')[0].innerHTML += txt.charAt(i);
+      document.getElementsByClassName('terminal-typing')[0].innerHTML += txt.charAt(i);
       i++;
       setTimeout(typeItOut, speed);
     }else if(i==txt.length){
       //add flashing block
-      document.getElementsByClassName('demo')[0].innerHTML += 'maxkernchen@maxkernchen.github.io:';
+      document.getElementsByClassName('terminal-typing')[0].innerHTML += 'maxkernchen@maxkernchen.github.io:';
       
       flashing_Command();
      
@@ -45,12 +45,12 @@ var toggle = false;
   function flashing_Command () {
     
     if(toggle){
-      var tempString = document.getElementsByClassName('demo')[0].innerHTML;
+      var tempString = document.getElementsByClassName('terminal-typing')[0].innerHTML;
       tempString = tempString.substr(0,tempString.length -1);
-    document.getElementsByClassName('demo')[0].innerHTML = tempString;
+    document.getElementsByClassName('terminal-typing')[0].innerHTML = tempString;
     }
     else{
-      document.getElementsByClassName('demo')[0].innerHTML += '█';
+      document.getElementsByClassName('terminal-typing')[0].innerHTML += '█';
     }
     toggle = !toggle;
     setTimeout(flashing_Command, 500);
