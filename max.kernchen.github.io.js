@@ -9,31 +9,55 @@ var getAll = function (selector, scope) {
   return scope.querySelectorAll(selector);
 };
 
-function type(){
-// setup typewriter effect
-if (document.getElementsByClassName('terminal-typing').length > 0) {
-  var i = 0;
-  var txt = './welcome.sh \n'+
-  'Welcome to my page! On here you will find my recent projects & resume. \n'+
-  'Feel free to contact me anytime!\n';
-  var speed = 40;
+//static message for inputs.
+var terminalMessage = 'maxkernchen@maxkernchen.github.io:./welcome.sh <br>' +  
+  'Welcome to my page! On here you will find my recent projects & resume. '+
+  'Feel free to contact me anytime! <br> ' +
+  'maxkernchen@maxkernchen.github.io:';
 
-  function typeItOut () {
-    if (i < txt.length) {
-      document.getElementsByClassName('terminal-typing')[0].innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeItOut, speed);
-    }else if(i==txt.length){
-      //add flashing block
-      document.getElementsByClassName('terminal-typing')[0].innerHTML += 'maxkernchen@maxkernchen.github.io:';
-      
-      flashing_Command();
-     
+  // message for typing characters one by one.
+  var terminalMessageTyping = './welcome.sh <br>' +  
+  'Welcome to my page! On here you will find my recent projects & resume. '+
+  'Feel free to contact me anytime! <br>' +
+  'Usage: <br> 1 - Navigate to Projects, 2 - Navigate to GitHub,' +
+  '3 - Contact Information';
 
+
+async function type(){
+
+document.getElementById('hidden-input-field').disabled = true;
+
+  var i = 0
+  
+  var speed = 30;
+
+ for(i;i < terminalMessageTyping.length;i++){
+ 
+    // need to add full break tag at once otherwise it won't be interpreted.
+    if(terminalMessageTyping.charAt(i) == '<')        
+    {
+      document.getElementsByClassName('terminal-typing')[0].innerHTML += terminalMessageTyping.slice(i,i+5);
+      i+=4;
     }
-  }
+    else
+    {
+      document.getElementsByClassName('terminal-typing')[0].innerHTML += terminalMessageTyping.charAt(i);
+    }
+    
+    await new Promise(r => setTimeout(r, speed));
 
-  setTimeout(typeItOut,1800);
+ }
+
+  if(i>=terminalMessageTyping.length)
+  {
+   
+    // allow inputs after typing has finished.
+    document.getElementById('hidden-input-field').disabled = false;
+    document.getElementById('hidden-input-field').focus();
+    document.getElementById('hidden-input-field').select();
+    flashingCommand();
+    
+
   }
   
 }
@@ -41,57 +65,47 @@ if (document.getElementsByClassName('terminal-typing').length > 0) {
 type();
 
 var toggle = false;
- 
-  function flashing_Command () {
-    
-    if(toggle){
+var stopFlashing = false;
+var timeout = 0;
+ function flashingCommand () {
+    if(!stopFlashing){
       var tempString = document.getElementsByClassName('terminal-typing')[0].innerHTML;
-      tempString = tempString.substr(0,tempString.length -1);
-    document.getElementsByClassName('terminal-typing')[0].innerHTML = tempString;
+      if(toggle)
+      {
+        tempString = tempString.substr(0,tempString.length -1);
+        document.getElementsByClassName('terminal-typing')[0].innerHTML = tempString;
+      }
+      else
+      {
+        document.getElementsByClassName('terminal-typing')[0].innerHTML += '█';
+      }
+      
+      
+      toggle = !toggle;
+      timeout = setTimeout(flashingCommand, 500)
+      console.log("500ms?")  
     }
-    else{
-      document.getElementsByClassName('terminal-typing')[0].innerHTML += '█';
+    // only need to remove flashing block character if we start typing.
+    else if(!toggle){
+      document.getElementsByClassName('terminal-typing')[0].innerHTML = tempString.substr(0,tempString.length -1);;
     }
-    toggle = !toggle;
-    setTimeout(flashing_Command, 500);
+  }
+    
   
-  }
+  
+function typeCommands(){
+  // add text to current terminal
+  stopFlashing = true;
+  document.getElementsByClassName('terminal-typing')[0].innerHTML = terminalMessageTyping + document.getElementById('hidden-input-field').value;
+  stopFlashing = false;
+  toggle = false;
+  clearTimeout(timeout);
+  flashingCommand();
+
+}
 
 
 
-// toggle tabs on codeblock
-window.addEventListener("load", function() {
-  // get all tab_containers in the document
-  var tabContainers = getAll(".tab__container");
-
-  // bind click event to each tab container
-  for (var i = 0; i < tabContainers.length; i++) {
-    get('.tab__menu', tabContainers[i]).addEventListener("click", tabClick);
-  }
-
-  // each click event is scoped to the tab_container
-  function tabClick (event) {
-    var scope = event.currentTarget.parentNode;
-    var clickedTab = event.target;
-    var tabs = getAll('.tab', scope);
-    var panes = getAll('.tab__pane', scope);
-    var activePane = get(`.${clickedTab.getAttribute('data-tab')}`, scope);
-
-    // remove all active tab classes
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].classList.remove('active');
-    }
-
-    // remove all active pane classes
-    for (var i = 0; i < panes.length; i++) {
-      panes[i].classList.remove('active');
-    }
-
-    // apply active classes on desired tab and pane
-    clickedTab.classList.add('active');
-    activePane.classList.add('active');
-  }
-});
 
 //in page scrolling for project page
 var btns = getAll('.js-btn');
@@ -157,20 +171,25 @@ window.addEventListener('scroll', function () {
     }
   }
 });
-
-// responsive navigation
-var topNav = get('.menu');
-var icon = get('.toggle');
-
-window.addEventListener('load', function(){
-  function showNav() {
-    if (topNav.className === 'menu') {
-      topNav.className += ' responsive';
-      icon.className += ' open';
-    } else {
-      topNav.className = 'menu';
-      icon.classList.remove('open');
-    }
+var input = document.getElementById('hidden-input-field');
+// check for enter command for terminal
+input.addEventListener('keyup',  async function(event) {
+ if (event.key == 'Enter') {
+  var inputTxt = document.getElementById('hidden-input-field').value;
+  if(inputTxt == '1'){
+    document.getElementsByClassName('terminal-typing')[0].innerHTML += '<br> Sending to Projects...'
+    await new Promise(r => setTimeout(r, speed));
+    window.location = 'projects.html';
   }
-  icon.addEventListener('click', showNav);
+  else{
+    document.getElementsByClassName('terminal-typing')[0].innerHTML += '<br> Invalid Input! Usage '
+  }
+}
 });
+
+// put focus back in input field when clicking on div for terminal
+document.getElementsByClassName('terminal')[0]
+        .addEventListener('click', function (event) {
+          document.getElementById('hidden-input-field').focus();
+          document.getElementById('hidden-input-field').select();
+        });

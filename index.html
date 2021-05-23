@@ -6,7 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://kit.fontawesome.com/181187a2fc.js" crossorigin="anonymous"></script>
 
-      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
       <link rel="stylesheet" href="styles.css">
       <link rel="stylesheet" href="scribbler-landing.css">
@@ -24,15 +25,19 @@
       
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="projects.html" class="link link--dark"><i class="fa fa-file-code-o" aria-hidden="true"></i>Projects</a></li>
-        <li class="menu__item"><a href="https://github.com/maxkernchen" class="link link--dark"><i class="fa fa-github"></i>Github</a></li>
+        <li class="menu__item"><a href="projects.html" class="link"><i class="fa fa-file-code-o" aria-hidden="true"></i>Projects</a></li>
+        <li class="menu__item"><a href="https://github.com/maxkernchen" class="link"><i class="fa fa-github"></i>Github</a></li>
+        <li class="menu__item"><a href="contact.html" class ="link"><i class="fas fa-id-card"></i>Contact Me</a></li>
+        
       </ul>
+
+      
     </nav>
     </div>
     
     <div class="header">
        <img  src="profile.jpg" alt="Profile Picture" class="profile_pic"> 
-      <h1 class="hero__title">Max Kernchen</h1>
+      <h1 class="title">Max Kernchen</h1>
        
       <p class="hero__description">Resume and Software Development Portfolio</p>
     </div>
@@ -41,60 +46,19 @@
       
       
         <code class="terminal-typing">maxkernchen@maxkernchen.github.io:</code>
-
+        <div id ="hidden-input">
+          <input spellcheck="false" type="text" maxlength="50" id="hidden-input-field" oninput="typeCommands()"/>
+      </div>
       
-        
-     
-    
+  
     </div>
  
-    <!-- commenting out for, there might be a more pretty way to display three contact places"
-    <div class="wrapper">
-      
-      <div class="feature">
-        <div class="feature__item">
-          <h3 class="section__title">Resume</h3>
-          <p>Click below to download or view my current Resume.
-            <br>
-     
-            <a href="Resume_Max_Kernchen.pdf" class="button--common">Resume <i class="fa fa-file-pdf-o" aria-hidden="true"
-              style="margin-top: 23px"></i>
-            </a>
-        </div>
-        
-        <div class="feature__item">
-          <h3 class="section__title">Projects</h3>
-          <p>Click below to see my school and personal projects. </p>
-          <a href="projects.html" style="background-color:#1284df" class="button--primary">Projects 
-              <i class="fa fa-file-code-o" aria-hidden="true"></i>
+  </div>
+
+  <div>
+   
 
 
-          </a>
-        </div>
-        <div class="feature__item">
-            <h3 class="section__title">GitHub<i class="fa fa-github"></i></h3>
-            <p>Click below to see my GitHub where I upload most of my projects.</p>
-            <a href="https://github.com/maxkernchen" style="margin-left: 0px" class="button--github">GitHub <i class="fa fa-github"></i></a>
-          </div>
-      </div>
-      <br>
-      <br>
-      <div class="installation">
-        <h3 class="section__title" style="text-align: center;font-size: 1.5rem">Contact Information</h3>
-        <div class="tab__container">
-          <ul class="tab__menu">
-            <li class="tab active" style="color:#026b45" data-tab="Email">Email</li>
-            <li class="tab" style="color:#1284df" data-tab="Phone">Phone</li>
-            <li class="tab" style="color:#5e2957"data-tab="LinkedIn">LinkedIn</li>
-          </ul>
-         <div class="contact">
-            <a class="tab__pane active Email" style="color:black" href="mailto:max.f.kernchen@gmail.com">max.f.kernchen@gmail.com</a>
-            <a class="tab__pane Phone" style="color:black">704-728-6806</a>
-            <a class="tab__pane LinkedIn" style="color:black" href="http://www.linkedin.com/in/maxkernchen">www.linkedin.com/in/maxkernchen</a>
-         </div>
-        </div>
-      </div>
-    </div>-->
   </div>
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
