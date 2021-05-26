@@ -25,7 +25,7 @@ TODO go through and replace once used items with id #*/
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     background-color:var(--light-gray-color);
-    
+  
   }
   
   p {
@@ -36,7 +36,7 @@ TODO go through and replace once used items with id #*/
   li {
      
       font-weight: 200;
-      color: #4A4A4A;
+      color: var(--off-black-color);;
     
   }
   
@@ -45,12 +45,13 @@ TODO go through and replace once used items with id #*/
     color: var(--primary-color);
   }
   
-  hr {
-    padding: 1rem 0;
-    border: 0;
-    border-bottom: 1px solid var(--bg-color);
+  h1 {
+    font-weight: 500;
+  
+    
   }
- 
+  
+  
   
   /* global components */
   
@@ -173,33 +174,40 @@ TODO go through and replace once used items with id #*/
   .container { 
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 10% 40% 30% 20%;
-    row-gap: 40px;   
+    grid-template-rows: 75px 300px 300px 300px;
+    row-gap: 40px;  
     grid-template-areas:
         'menu menu .'
         '. header .'
         '. terminal .'
-        '. contact--item .'
-       
-       
+        'contact-grid contact-grid contact-grid'
+        
+        
        
   }
 
    #container--contact { 
     
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: auto;
-    grid-template-areas:
-        'contact--item contact--item contact--item'
-        
-       
+  
+    grid-area: contact-grid;
+    grid-template-columns: repeat(3, [col] 400px);
+    grid-template-rows: 200px;
+    column-gap: 300px;
+    justify-self: center;
+
        
   }
 
- #contact--item{
-   text-align: center;
-   grid-area: contact--item;
+ .contact--item{
+   text-align: left;
+   font-weight: 300;
+   font-size: xx-large;
+   transition: .2s ease-out;
+   cursor: pointer;
+ }
+ .contact--item:hover{
+  color: var(--accent-color);
  }
 
   .header{
@@ -379,7 +387,7 @@ TODO go through and replace once used items with id #*/
  
 
 .link {
-  font-weight: 600;
+  font-weight: 400;
   transition: .2s ease-out;
 }
 
@@ -388,11 +396,12 @@ TODO go through and replace once used items with id #*/
 }
 
 .title {
-  font-weight: 1000;
+  font-weight: 600;
   color: var(--off-black-color);
 }
 .subtitle{
-  margin: -10px auto 20px auto;
+  margin: -10px auto 10px auto;
+  font-weight: 500;
 }
 
   

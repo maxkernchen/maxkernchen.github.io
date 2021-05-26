@@ -23,14 +23,14 @@ var terminalMessage = 'maxkernchen@maxkernchen.github.io:./welcome.sh <br>' +
   'Usage: <br> Enter 1 - Navigate to Projects, 2 - Navigate to GitHub, ' +
   '3 - Contact Information:';
 
-
+var typeSpeed = 30;
 async function type(){
 
 document.getElementById('hidden-input-field').disabled = true;
 
   var i = 0
   
-  var speed = 30;
+  
 
  for(i;i < terminalMessageTyping.length;i++){
  
@@ -45,7 +45,7 @@ document.getElementById('hidden-input-field').disabled = true;
       document.getElementsByClassName('terminal-typing')[0].innerHTML += terminalMessageTyping.charAt(i);
     }
     
-    await new Promise(r => setTimeout(r, speed));
+    await new Promise(r => setTimeout(r, typeSpeed));
 
  }
 
@@ -84,7 +84,7 @@ var timeout = 0;
       
       toggle = !toggle;
       timeout = setTimeout(flashingCommand, 500)
-      console.log("500ms?")  
+    
     }
     // only need to remove flashing block character if we start typing.
     else if(!toggle){
@@ -97,15 +97,33 @@ var timeout = 0;
 function typeCommands(){
   // add text to current terminal
   stopFlashing = true;
-  document.getElementsByClassName('terminal-typing')[0].innerHTML = terminalMessage + document.getElementById('hidden-input-field').value;
+  document.getElementsByClassName('terminal-typing')[0].innerHTML = terminalMessage + 
+  document.getElementById('hidden-input-field').value;
   stopFlashing = false;
   toggle = false;
   clearTimeout(timeout);
   flashingCommand();
 
 }
-
-
+// transform email contact to actual email.
+async function emailTransform(){
+var emailTxt = 'x.f.kernchen@gmail.com';
+//first remove uneeded chars
+var slowerTypeSpeed = typeSpeed + 30;
+await new Promise(r => setTimeout(r, slowerTypeSpeed + 100));
+document.getElementById('email-contact').innerHTML = 'mail';
+await new Promise(r => setTimeout(r, slowerTypeSpeed + 400));
+document.getElementById('email-contact').innerHTML = 'mai';
+await new Promise(r => setTimeout(r, slowerTypeSpeed+ 400));
+document.getElementById('email-contact').innerHTML = 'ma';
+//type remaining email
+  for(i = 0;i < emailTxt.length;i++){
+      document.getElementById('email-contact').innerHTML += emailTxt.charAt(i);
+      await new Promise(r => setTimeout(r, slowerTypeSpeed));
+    }
+    
+    
+}
 
 
 //in page scrolling for project page
@@ -214,4 +232,10 @@ document.getElementsByClassName('terminal')[0]
         .addEventListener('click', function (event) {
           document.getElementById('hidden-input-field').focus();
           document.getElementById('hidden-input-field').select();
+        });
+
+// email contact element clicked, change to actual email.
+document.getElementById('email-contact')
+        .addEventListener('click', function (event) {
+          emailTransform();
         });
