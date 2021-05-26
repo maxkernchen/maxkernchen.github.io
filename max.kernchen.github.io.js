@@ -13,14 +13,15 @@ var getAll = function (selector, scope) {
 var terminalMessage = 'maxkernchen@maxkernchen.github.io:./welcome.sh <br>' +  
   'Welcome to my page! On here you will find my recent projects & resume. '+
   'Feel free to contact me anytime! <br> ' +
-  'maxkernchen@maxkernchen.github.io:';
+  'Usage: <br> Enter 1 - Navigate to Projects, 2 - Navigate to GitHub, ' +
+  '3 - Contact Information:';
 
   // message for typing characters one by one.
   var terminalMessageTyping = './welcome.sh <br>' +  
   'Welcome to my page! On here you will find my recent projects & resume. '+
   'Feel free to contact me anytime! <br>' +
-  'Usage: <br> 1 - Navigate to Projects, 2 - Navigate to GitHub,' +
-  '3 - Contact Information';
+  'Usage: <br> Enter 1 - Navigate to Projects, 2 - Navigate to GitHub, ' +
+  '3 - Contact Information:';
 
 
 async function type(){
@@ -96,7 +97,7 @@ var timeout = 0;
 function typeCommands(){
   // add text to current terminal
   stopFlashing = true;
-  document.getElementsByClassName('terminal-typing')[0].innerHTML = terminalMessageTyping + document.getElementById('hidden-input-field').value;
+  document.getElementsByClassName('terminal-typing')[0].innerHTML = terminalMessage + document.getElementById('hidden-input-field').value;
   stopFlashing = false;
   toggle = false;
   clearTimeout(timeout);
@@ -175,15 +176,36 @@ var input = document.getElementById('hidden-input-field');
 // check for enter command for terminal
 input.addEventListener('keyup',  async function(event) {
  if (event.key == 'Enter') {
-  var inputTxt = document.getElementById('hidden-input-field').value;
-  if(inputTxt == '1'){
-    document.getElementsByClassName('terminal-typing')[0].innerHTML += '<br> Sending to Projects...'
-    await new Promise(r => setTimeout(r, speed));
-    window.location = 'projects.html';
+    stopFlashing = true;
+    var inputTxt = document.getElementById('hidden-input-field').value;
+    //3 maybe download resume?? TODO
+    switch(inputTxt){
+      case '1':
+        document.getElementsByClassName('terminal-typing')[0].innerHTML += '<br> Sending to Projects...';
+        await new Promise(r => setTimeout(r, 500));
+        window.location = 'projects.html';        
+        break;
+      case '2':
+        document.getElementsByClassName('terminal-typing')[0].innerHTML += '<br> Sending to GitHub...';
+        await new Promise(r => setTimeout(r, 500));
+        window.location = 'https://github.com/maxkernchen'; 
+        break;
+      default:
+        document.getElementsByClassName('terminal-typing')[0].innerHTML += '<br> Invalid Input!';
+        await new Promise(r => setTimeout(r, 1000));
   }
-  else{
-    document.getElementsByClassName('terminal-typing')[0].innerHTML += '<br> Invalid Input! Usage '
-  }
+
+    //reset message and input
+    document.getElementsByClassName('terminal-typing')[0].innerHTML = terminalMessage;
+    document.getElementById('hidden-input-field').value = '';
+    document.getElementById('hidden-input-field').focus();
+    document.getElementById('hidden-input-field').select();
+  
+    // flash cursor again
+    stopFlashing = false;
+    toggle = false;
+    clearTimeout(timeout);
+    flashingCommand();
 }
 });
 

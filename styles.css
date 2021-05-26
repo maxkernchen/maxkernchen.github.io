@@ -29,13 +29,13 @@ TODO go through and replace once used items with id #*/
   }
   
   p {
-    font-weight: 500;
-    color: #4A4A4A;
+    font-weight: 300;
+    color:var(--off-black-color);
   }
   
   li {
      
-      font-weight: 500;
+      font-weight: 200;
       color: #4A4A4A;
     
   }
@@ -50,10 +50,7 @@ TODO go through and replace once used items with id #*/
     border: 0;
     border-bottom: 1px solid var(--bg-color);
   }
-  
-  * {
-    box-sizing: border-box;
-  }
+ 
   
   /* global components */
   
@@ -174,35 +171,36 @@ TODO go through and replace once used items with id #*/
   }
   /* grid layout for all containing divs */
   .container { 
-    max-height: 1000px;
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 10% 40% 50% ;
-    row-gap: 80px;   
+    grid-template-rows: 10% 40% 30% 20%;
+    row-gap: 40px;   
     grid-template-areas:
-        "menu menu ."
-        ". header ." 
-        ". terminal ."
+        'menu menu .'
+        '. header .'
+        '. terminal .'
+        '. contact--item .'
        
        
        
   }
 
-   .container--contact { 
+   #container--contact { 
     
     display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 20% 40% 50%;
-    row-gap: 100px;   
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
     grid-template-areas:
-        "menu menu ."
-        ". header ." 
-        ". . ."
+        'contact--item contact--item contact--item'
+        
        
        
   }
 
- 
+ #contact--item{
+   text-align: center;
+   grid-area: contact--item;
+ }
 
   .header{
   
@@ -213,6 +211,7 @@ TODO go through and replace once used items with id #*/
   
 
   }
+
   
   
   nav {
@@ -229,7 +228,7 @@ TODO go through and replace once used items with id #*/
   }
   .terminal {
     width: 90%;
-    
+    height: 200px;
     text-align: left;
     color: white;
     background-color: black;
@@ -391,6 +390,9 @@ TODO go through and replace once used items with id #*/
 .title {
   font-weight: 1000;
   color: var(--off-black-color);
+}
+.subtitle{
+  margin: -10px auto 20px auto;
 }
 
   
