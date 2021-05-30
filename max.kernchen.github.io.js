@@ -106,25 +106,61 @@ function typeCommands(){
 
 }
 // transform email contact to actual email.
-async function emailTransform(){
+async function emailTransform(event){
 var emailTxt = 'x.f.kernchen@gmail.com';
 //first remove uneeded chars
 var slowerTypeSpeed = typeSpeed + 30;
+var emailElement = document.getElementById('email-contact');
+// replace with anchor for mailto link
+emailElement.innerHTML = 
+'<a id="email-anchor" class="contact--item" href="mailto:max.f.kernchen@gmail.com"></a>';
+var emailAnchor = document.getElementById('email-anchor');
 await new Promise(r => setTimeout(r, slowerTypeSpeed + 100));
-document.getElementById('email-contact').innerHTML = 'mail';
+emailAnchor.innerHTML = 'mail';
 await new Promise(r => setTimeout(r, slowerTypeSpeed + 400));
-document.getElementById('email-contact').innerHTML = 'mai';
-await new Promise(r => setTimeout(r, slowerTypeSpeed+ 400));
-document.getElementById('email-contact').innerHTML = 'ma';
+emailAnchor.innerHTML = 'mai';
+await new Promise(r => setTimeout(r, slowerTypeSpeed + 400));
+emailAnchor.innerHTML = 'ma';
 //type remaining email
   for(i = 0;i < emailTxt.length;i++){
-      document.getElementById('email-contact').innerHTML += emailTxt.charAt(i);
+      var chartxt = emailTxt.charAt(i);
+      emailAnchor.insertAdjacentHTML('beforeend', emailTxt.charAt(i));
       await new Promise(r => setTimeout(r, slowerTypeSpeed));
     }
-    
-    
+  
+  
+  emailElement.removeEventListener('click', emailTransform);
 }
 
+// transform email contact to actual email.
+async function phoneTransform(){
+  var phoneTxt = '4-728-6806';
+  //first remove uneeded chars
+  var slowerTypeSpeed = typeSpeed + 200;
+  var phoneElement = document.getElementById('phone-contact')
+  phoneElement.innerHTML = 
+  '<a id="phone-anchor" class="contact--item" href="tel:7047286806"></a>';
+
+  var phoneAnchor = document.getElementById('phone-anchor');
+  await new Promise(r => setTimeout(r, slowerTypeSpeed + 100));
+  phoneAnchor.innerHTML = 'hone';
+  await new Promise(r => setTimeout(r, slowerTypeSpeed));
+  phoneAnchor.innerHTML = 'one';
+  await new Promise(r => setTimeout(r, slowerTypeSpeed ));
+  phoneAnchor.innerHTML = 'oe';
+  await new Promise(r => setTimeout(r, slowerTypeSpeed));
+  phoneAnchor.innerHTML = '0';
+  await new Promise(r => setTimeout(r, slowerTypeSpeed));
+  phoneAnchor.innerHTML = '70';
+  //type remaining email
+    for(i = 0;i < phoneTxt.length;i++){
+      phoneAnchor.insertAdjacentHTML('beforeend', phoneTxt.charAt(i));
+        await new Promise(r => setTimeout(r, slowerTypeSpeed - 100));
+      }
+      
+      phoneElement.removeEventListener('click',phoneTransform);
+    
+  }
 
 //in page scrolling for project page
 var btns = getAll('.js-btn');
@@ -235,7 +271,6 @@ document.getElementsByClassName('terminal')[0]
         });
 
 // email contact element clicked, change to actual email.
-document.getElementById('email-contact')
-        .addEventListener('click', function (event) {
-          emailTransform();
-        });
+document.getElementById('email-contact').addEventListener('click', emailTransform);
+// phone contact element clicked, change to actual phone number.
+document.getElementById('phone-contact').addEventListener('click', phoneTransform);
