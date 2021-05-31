@@ -226,6 +226,14 @@ function smoothScrollTo(element, event) {
   });
 }
 
+function smoothScrollToEle(element) {
+
+  window.scrollTo({
+    'behavior': 'smooth',
+    'top': element.offsetTop,
+    'left': 0
+  });
+}
 if (btns.length && sections.length > 0) {
 // for (var i = 0; i<btns.length; i++) {
 //   btns[i].addEventListener('click', function(event) {
@@ -288,7 +296,9 @@ var input = document.getElementById('hidden-input-field');
 input.addEventListener('keyup',  async function(event) {
  if (event.key == 'Enter') {
     stopFlashing = true;
-    var inputTxt = document.getElementById('hidden-input-field').value;
+    let inputTxt = document.getElementById('hidden-input-field').value;
+    // boolean for not calling reset terminal if we are waiting on a promise to complete.
+    let inPromise = false;
     //3 maybe download resume?? TODO
     switch(inputTxt){
       case '1':
@@ -305,11 +315,13 @@ input.addEventListener('keyup',  async function(event) {
         // check to see if we already loaded all 3 contact elements
         if(contactPhoneLoaded && contactEmailLoaded && contactLinkedInLoaded){
           document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Contact Information Already Loaded!');
+          await new Promise(r => setTimeout(r, 1000));
         }
         else{
+          inPromise = true;
           document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Loading Contact Information...');
           let promise = new Promise(function(resolve, reject) {
-             transformAllContactInfo();
+            resolve(transformAllContactInfo());
           }).then(function(result) {
             console.log(result + 'in term input');
             resetTerminalAfterInput();
@@ -320,13 +332,16 @@ input.addEventListener('keyup',  async function(event) {
         document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Invalid Input!');
         await new Promise(r => setTimeout(r, 1000));
   }
-  resetTerminalAfterInput();
+  if(!inPromise){
+    resetTerminalAfterInput();
+  }
  }
 });
 
   // use a promise to wait for each function to finish before calling the next
   // transform all 3 contacts sequentially 
    async function transformAllContactInfo(){
+     smoothScrollToEle(document.getElementById('container--contact'));
     return new Promise(function(resolve, reject) {
       resolve(emailTransform());    
     }).then(function(result) {
