@@ -1,6 +1,8 @@
 /* css variables
 
-TODO go through and replace once used items with id #*/
+TODO go through and replace once used items with id #
+Also remove an __ if not needed to match naming conventions
+*/
 :root {
     --primary-color: #432E30;
     
@@ -32,6 +34,10 @@ TODO go through and replace once used items with id #*/
     font-weight: 300;
     color:var(--off-black-color);
   }
+  .project-p{
+    font-weight: 400;
+    color:antiquewhite
+  }
   
   li {
      
@@ -56,8 +62,8 @@ TODO go through and replace once used items with id #*/
   /* global components */
   
   /* typography */
-  .section__title {
-    color: var(--primary-color);
+  .project-section {
+    color: antiquewhite
   }
   
   
@@ -158,7 +164,10 @@ TODO go through and replace once used items with id #*/
   .button--github:hover::after {
     transform: rotate(90deg);
   }
-  
+
+.profile-pic{
+  border-radius: 50%;
+}
   
   .button--secondary {
     padding: 10px 22px;
@@ -170,8 +179,8 @@ TODO go through and replace once used items with id #*/
     border-color: var(--accent-color);
     color: var(--accent-color);
   }
-  /* grid layout for all containing divs */
-  .container { 
+  /* grid layout for all containing divs on home page*/
+  #container { 
     display: grid;
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 75px 300px 300px 300px;
@@ -185,6 +194,8 @@ TODO go through and replace once used items with id #*/
         
        
   }
+
+
 
    #container--contact { 
     
@@ -241,13 +252,9 @@ TODO go through and replace once used items with id #*/
     color: white;
     background-color: black;
     padding-left: 1rem;
-
     border-radius: 4px;
     justify-self: center;
-   
     grid-area: terminal;
-    
-    
     box-shadow: 0px 8px 10px 8px black;
   }
   #hidden-input{
@@ -269,50 +276,7 @@ TODO go through and replace once used items with id #*/
 }
 
   
-  .toggle {
-    display: none;
-    position: relative;
-  }
-  
-  .toggle span,
-  .toggle span:before,
-  .toggle span:after {
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 18px;
-    border-radius: 2px;
-    background: var(--primary-color);
-    display: block;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    right: 0;
-  }
-  
-  .toggle span:before {
-    top: -6px;
-  }
-  
-  .toggle span:after {
-    bottom: -6px;
-  }
-  
-  .toggle.open span{
-    background-color: transparent;
-  }
-  
-  .toggle.open span:before,
-  .toggle.open span:after {
-    top: 0;
-  }
-  
-  .toggle.open span:before {
-    transform: rotate(45deg);
-  }
-  
-  .toggle.open span:after {
-    transform: rotate(-45deg);
-  }
+
   
   .menu__item {
     padding: 1rem;
@@ -324,30 +288,6 @@ TODO go through and replace once used items with id #*/
   }
   
 
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    transition: color .3s ease-out;
-    margin-bottom: 2rem;
-  }
-  
-  table td, table th {
-    border: 1px solid var(--code-bg-color);
-    padding: 0.8rem;
-    font-weight: 300;
-  }
-  
-  table th {
-    text-align: left;
-    background-color: white;
-    border-color: white;
-    border-bottom-color: var(--code-bg-color);
-  }
-  
-  table td:first-child {
-    background-color: var(--bg-color);
-    font-weight: 600;
-  }
   
   /* replace with min-width -mk TODO */
   @media screen and (max-width: 800px) {
@@ -376,18 +316,11 @@ TODO go through and replace once used items with id #*/
   }
   
 
-  
-  .footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.2rem;
-    color: black;
-  }
-  
  
 
 .link {
   font-weight: 400;
+  font-size: large;
   transition: .2s ease-out;
   cursor: pointer;
 }
@@ -403,6 +336,53 @@ TODO go through and replace once used items with id #*/
 .subtitle{
   margin: -10px auto 10px auto;
   font-weight: 500;
+  
+}
+#project-container{
+  background-color: var(--off-black-color);
+  color: antiquewhite;
+}
+#project-content{
+  display: flex;
+  margin-left: 200px;
+  flex-direction: column;
+  min-height: 100vh;
+
 }
 
-  
+#project-nav {
+ 
+  font-weight: 600;
+  position: fixed;
+  width: 100px;
+  z-index: 100;
+  background-color: var(--off-black-color);
+  border-radius: 10%;
+}
+
+
+#project-nav ul {
+  list-style: none;
+}
+
+
+#project-nav li:hover {
+  color:var(--accent-color);
+  cursor: pointer;
+  transition: .2s ease-out;
+}
+
+#project-nav .selected {
+  color:var(--accent-color);
+  position: relative;
+  list-style: square;
+}
+
+#project-nav .selected:after {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  left: -1.5rem;
+  top: 0.3rem;
+}
