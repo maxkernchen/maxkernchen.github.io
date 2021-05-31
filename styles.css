@@ -191,9 +191,9 @@ TODO go through and replace once used items with id #*/
     display: grid;
   
     grid-area: contact-grid;
-    grid-template-columns: repeat(3, [col] 400px);
+    grid-template-columns: repeat(3, [col] auto);
     grid-template-rows: 200px;
-    column-gap: 300px;
+    column-gap: 200px;
     justify-self: center;
 
        
@@ -204,7 +204,7 @@ TODO go through and replace once used items with id #*/
    font-weight: 300;
    font-size: xx-large;
    transition: .2s ease-out;
-   cursor: pointer;
+   
  }
  .contact--item:hover{
   color: var(--accent-color);
@@ -389,6 +389,7 @@ TODO go through and replace once used items with id #*/
 .link {
   font-weight: 400;
   transition: .2s ease-out;
+  cursor: pointer;
 }
 
 .link:hover {
