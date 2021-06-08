@@ -66,29 +66,39 @@ if (btns.length && sections.length > 0) {
     btns[4].addEventListener('click', function (event) {
       smoothScrollTo(sections[4], event);
     }); 
+   
     window.addEventListener('scroll',scrollListener);
+
   
   }
 
   function scrollListener(){
-      
-    if( window.pageYOffset < btns[0].offsetTop){
+   
+   
+    if( window.pageYOffset < sections[0].offsetTop){
         setActiveBtnScroll(btns[0]);
+        
     }
-    else if (window.pageYOffset < btns[1].offsetTop){
+    else if (window.pageYOffset < sections[1].offsetTop){
       setActiveBtnScroll(btns[1]);
+     
     }
-    else if(window.pageYOffset < btns[2].offsetTop){
+    else if(window.pageYOffset < sections[2].offsetTop){
       setActiveBtnScroll(btns[2]);
-    }
-    else if( window.pageYOffset < btns[3].offsetTo){
-      setActiveBtnScroll(btns[3]);
       
     }
-
+   
+    else if( window.pageYOffset < sections[3].offsetTop){
+      setActiveBtnScroll(btns[3]);
+    
+    }
+    //bottom of page 
+    else if(window.pageYOffset < sections[4].offsetTop){
+      setActiveBtnScroll(btns[4]);
+    }
     
      
       
 
-  }
+  } 
 
