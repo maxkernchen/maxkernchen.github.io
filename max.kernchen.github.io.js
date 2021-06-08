@@ -1,15 +1,5 @@
-// utilities
-var get = function (selector, scope) {
-  scope = scope ? scope : document;
-  return scope.querySelector(selector);
-};
 
-var getAll = function (selector, scope) {
-  scope = scope ? scope : document;
-  return scope.querySelectorAll(selector);
-};
-
-//static message for inputs.
+//static message for inputs. 
 var terminalMessage = 'maxkernchen@maxkernchen.github.io:./welcome.sh <br>' +  
   'Welcome to my page! On here you will find my recent projects & resume. '+
   'Feel free to contact me anytime! <br> ' +
@@ -201,30 +191,10 @@ async function linkedinTransform(){
       contactLinkedInLoaded = true;
       return Promise.resolve('linkedin contact transformed');
   }
-  }
-
-//in page scrolling for project page
-var btns = getAll('.js-btn');
-var sections = getAll('.js-section');
-
-function setActiveLink(event) {
-  // remove all active tab classes
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].classList.remove('selected');
-  }
-
-  event.target.classList.add('selected');
 }
 
-function smoothScrollTo(element, event) {
-  setActiveLink(event);
 
-  window.scrollTo({
-    'behavior': 'smooth',
-    'top': element.offsetTop,
-    'left': 0
-  });
-}
+
 
 function smoothScrollToEle(element) {
 
@@ -234,47 +204,7 @@ function smoothScrollToEle(element) {
     'left': 0
   });
 }
-if (btns.length && sections.length > 0) {
-// for (var i = 0; i<btns.length; i++) {
-//   btns[i].addEventListener('click', function(event) {
-//     smoothScrollTo(sections[i], event);
-//   });
-// }
-  btns[0].addEventListener('click', function (event) {
-    smoothScrollTo(sections[0], event);
-  });
 
-  btns[1].addEventListener('click', function (event) {
-    smoothScrollTo(sections[1], event);
-  });
-
-  btns[2].addEventListener('click', function (event) {
-    smoothScrollTo(sections[2], event);
-  });
-
-  btns[3].addEventListener('click', function (event) {
-    smoothScrollTo(sections[3], event);
-  });
-
-  // adding one more menu item for smooth scroll
-
-  btns[4].addEventListener('click', function (event) {
-    smoothScrollTo(sections[4], event);
-  });
-}
-
-// fix menu to page-top once user starts scrolling
-window.addEventListener('scroll', function () {
-  var docNav = get('.doc__nav > ul');
-
-  if( docNav) {
-    if (window.pageYOffset > 63) {
-      docNav.classList.add('fixed');
-    } else {
-      docNav.classList.remove('fixed');
-    }
-  }
-});
 
 //helper method to reset the terminal after user input
 function resetTerminalAfterInput(){

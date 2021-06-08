@@ -354,7 +354,7 @@ Also remove an __ if not needed to match naming conventions
 }
 #project-content{
   display: flex;
-  margin-left: 200px;
+  margin-left: 260px;
   flex-direction: column;
  
   border-left: 2px solid var(--off-white-color);
@@ -364,7 +364,7 @@ Also remove an __ if not needed to match naming conventions
 #project-nav {
   font-weight: 400;
   position: fixed;
-  width: 200px;
+  width: 260px;
   z-index: 100;
   background-color: var(--off-black-color);
 }
