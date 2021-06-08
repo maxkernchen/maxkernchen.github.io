@@ -1,19 +1,6 @@
-// utilities
-var get = function (selector, scope) {
-  scope = scope ? scope : document;
-  return scope.querySelector(selector);
-};
 
-var getAll = function (selector, scope) {
-  scope = scope ? scope : document;
-  return scope.querySelectorAll(selector);
-};
-
-var scrollEvent;
-
-//in page scrolling for project page
-var btns = getAll('.js-btn');
-var sections = getAll('.js-section');
+var btns = document.getElementsByClassName('project-btn');
+var sections = document.getElementsByClassName('project-section');
 
 function setActiveBtn(event) {
   for (var i = 0; i < btns.length; i++) {
@@ -29,76 +16,46 @@ function setActiveBtnScroll(btn) {
   btn.classList.add('selected');
 }
 
-async function smoothScrollTo(element, event) {
-  // remove scroll listener while smooth scrolling 
-  window.removeEventListener('scroll', scrollListener);
+function smoothScrollTo(element, event) {
+ 
   setActiveBtn(event);
 
   window.scrollTo({
     'behavior': 'smooth',
-    'top': element.offsetTop,
-    'left': 0
+    'top': element.offsetTop
   });
-  // add listner back after waiting for scroll
-  await new Promise(r => setTimeout(r, 500));
-  window.addEventListener('scroll', scrollListener);
+
 }
-
-
-if (btns.length && sections.length > 0) {
+// add listeners for aside clicks
+for(var i = 0;i < btns.length && i < sections.length;i++ ){
+  let btnTemp = btns[i];
+  let sectionTemp = sections[i];
+  btnTemp.addEventListener('click', function (event) {
+    smoothScrollTo(sectionTemp, event);
+  });
+}
  
-    btns[0].addEventListener('click', function (event) {
-      smoothScrollTo(sections[0], event);
-    });
+// change links on aside when scrolling
+function scrollListener(){
   
-    btns[1].addEventListener('click', function (event) {
-      smoothScrollTo(sections[1], event);
-    });
-  
-    btns[2].addEventListener('click', function (event) {
-      smoothScrollTo(sections[2], event);
-    });
-  
-    btns[3].addEventListener('click', function (event) {
-      smoothScrollTo(sections[3], event);
-    });
-  
-    btns[4].addEventListener('click', function (event) {
-      smoothScrollTo(sections[4], event);
-    }); 
-   
-    window.addEventListener('scroll',scrollListener);
-
-  
+  if(window.scrollY < sections[0].offsetTop + sections[0].scrollHeight){
+      setActiveBtnScroll(btns[0]);     
   }
-
-  function scrollListener(){
-   
-   
-    if( window.pageYOffset < sections[0].offsetTop){
-        setActiveBtnScroll(btns[0]);
-        
-    }
-    else if (window.pageYOffset < sections[1].offsetTop){
-      setActiveBtnScroll(btns[1]);
-     
-    }
-    else if(window.pageYOffset < sections[2].offsetTop){
-      setActiveBtnScroll(btns[2]);
-      
-    }
-   
-    else if( window.pageYOffset < sections[3].offsetTop){
-      setActiveBtnScroll(btns[3]);
-    
-    }
-    //bottom of page 
-    else if(window.pageYOffset < sections[4].offsetTop){
-      setActiveBtnScroll(btns[4]);
-    }
-    
-     
-      
-
+  else if(window.scrollY < sections[1].offsetTop + sections[1].scrollHeight){
+    setActiveBtnScroll(btns[1]);    
+  }
+  else if(window.scrollY < sections[2].offsetTop + sections[2].scrollHeight){
+    setActiveBtnScroll(btns[2]);    
   } 
+  else if( window.scrollY < sections[3].offsetTop + sections[3].scrollHeight
+        && !(window.innerHeight + window.scrollY >= document.body.offsetHeight)){
+    setActiveBtnScroll(btns[3]);
+  }
+  //bottom of page 
+  else{
+    setActiveBtnScroll(btns[4]);
+  }
+} 
+
+window.addEventListener('scroll',scrollListener);
 
