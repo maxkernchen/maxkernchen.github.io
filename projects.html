@@ -8,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+   
     
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -22,8 +23,8 @@
       <nav>      
         <ul class="project-menu">
           <div class="menu__item toggle "><span></span></div>
-          <li class="menu__item "><a href="index.html" class="link project"><i class="fa fa-home"></i>Home</a></li>
-          <li class="menu__item "><a href="https://github.com/maxkernchen" class="link project"><i class="fa fa-github"></i>Github</a></li>        
+          <li class="menu__item "><a href="index.html" class="link dark"><i class="fa fa-home"></i>Home</a></li>
+          <li class="menu__item "><a href="https://github.com/maxkernchen" class="link dark"><i class="fa fa-github"></i>Github</a></li>        
         </ul>  
       </nav>
      </div>
@@ -59,14 +60,14 @@
         </p>
         
           <p id='wifiranger_calc' class="project-p"> WiFi coverage is calculate by a modified 
-            <a class="link--light" href ="https://en.wikipedia.org/wiki/Free-space_path_loss#Free-space_path_loss_in_decibels">
+            <a class="link dark" href ="https://en.wikipedia.org/wiki/Free-space_path_loss#Free-space_path_loss_in_decibels">
               free-space path loss</a> formula which adds the natural log of the router's power to it.
               Some basic real world testing using simple Android applications proved this method to be fairly accurate. Below is the current formula
                WifiRanger uses to calculate the distance, in one direction, covered in meters.
                </p>
              <p class="project-p">$$m = 10^{\frac{(27.55 - (20 \cdot \log(frequencyMHz) + |dBm| +\ln(power)))}{20}}$$</p>
              <p class="project-p">Frequency is between 2400 - 5800 megahertz for most routers, dBm or decibel-milliwatts is 
-               usually -57 or -58 which is the lowest Wifi strength for reliable packet delivery.
+               usually -57 which is the lowest Wifi strength for reliable packet delivery.
                Power is different for every router, most of the time higher power = higher range. 
              </p>
              <p class="project-p">
@@ -78,9 +79,13 @@
              <br>
             
              
-          <a href="WifiRanger.zip" class="button--common">Download</a>
+          <a href="WifiRanger.zip" class="hvr-icon-down">Download
+            <i class="fas fa-file-download hvr-icon"></i>
+          </a>
         
-          <a href="https://github.com/maxkernchen/WifiRanger" class="button--github">WifiRanger GitHub <i class="fab fa-github"></i></a>
+          <a href="https://github.com/maxkernchen/WifiRanger" class="hvr-icon-forward secondBtn">WifiRanger GitHub 
+            <i class="fab fa-github hvr-icon"></i>
+          </a>
           <hr />
           
       
@@ -92,14 +97,18 @@
             <p class="project-p">Spot My Mood is an Android application which allows users to take a self image and display current emotions.
               These emotions are then connected to a Spotify playlist to best match them.
             </p>
-            <p class="project-p">Spot My Mood is powered by Microsoft's <a class="link--light" href="https://azure.microsoft.com/en-us/services/cognitive-services/emotion/">Emotion API </a> </p>
+            <p class="project-p">Spot My Mood is powered by Microsoft's <a class="link dark" href="https://azure.microsoft.com/en-us/services/cognitive-services/emotion/">Emotion API </a> </p>
             <p class="project-p">An image is turned into a bitmap which is sent to Microsoft's Emotion Web Service. Then results are returned in an ArrayList which contains 8 emotions that are ranked from 0 to 1.
               The higher the number the more the emotion is seen. </p>
-            <p class="project-p">These results are then converted into a visual graph using <a class="link--light" href="https://github.com/PhilJay/MPAndroidChart" >MPAndroidChart </a> 
+            <p class="project-p">These results are then converted into a visual graph using <a class="link dark" href="https://github.com/PhilJay/MPAndroidChart" >MPAndroidChart </a> 
                Below are PlayStore links and Spot My Mood's GitHub
             </p>
-            <a href="https://play.google.com/store/apps/details?id=com.kernchen.spotmymood&hl=en_GB" class="button--common">Spot My Mood PlayStore <i class="fab fa-google-play"></i></a>
-            <a href="https://github.com/maxkernchen/SpotMyMood" style="margin-left: 50px" class="button--github">Spot My Mood GitHub <i class="fab fa-github"></i></a>
+            <a href="https://play.google.com/store/apps/details?id=com.kernchen.spotmymood&hl=en_GB" 
+            class="hvr-icon-forward playstore">Spot My Mood PlayStore <i class="fab fa-google-play hvr-icon">
+            </i>
+          </a>
+            <a href="https://github.com/maxkernchen/SpotMyMood" class="hvr-icon-forward secondBtn">
+              Spot My Mood GitHub <i class="fab fa-github hvr-icon"></i></a>
 
             <hr/>
         
@@ -108,23 +117,22 @@
 
           <section class="project-section">
             <h3 id='lynx' class="section__title">Lynx </h3>
-            <p >Lynx is a Peer-to-Peer file synchronization application written using Go. 
+            <p class="project-p">Lynx is a Peer-to-Peer file synchronization application written using Go. 
               Using a shared meta file any machine running Lynx can receive and send files to other machines running Lynx. 
             </p>
-            <p>Lynx implements a browser based GUI, which allows for portability between different operating systems
+            <p class="project-p">Lynx implements a browser based GUI, which allows for portability between different operating systems
                and the use of modern web design components like Bootstrap and JQueryUI. 
              </p>
-            <p>Lynx was part of a capstone project that all students must complete before graduating. This project was a partner project.
+            <p class="project-p">Lynx was part of a capstone project that all students must complete before graduating. This project was a partner project.
                My main responsibilities were the design and functionality of the UI and file parsing into structs and meta files. 
                Currently I am making enhancements to all parts of Lynx which can be viewed at its GitHub linked below. You will also find below a working
                 example of Lynx between a Linux Debian Guest Virtual Machine and a Windows 10 Host. </p>
-                <br>
-                
-                
+                <br>           
                 <br>
                 <br>
             
-            <a href="https://github.com/maxkernchen/Lynx" style="margin-left: 0px" class="button--github">Lynx GitHub <i class="fab fa-github"></i></a>
+            <a href="https://github.com/maxkernchen/Lynx" class="hvr-icon-forward">
+              Lynx GitHub<i class="fab fa-github hvr-icon"></i></a>
 
             <hr/>
         
@@ -133,7 +141,7 @@
 
           <section class="project-section">
             <h3 id="class_projects" class="section__title"> Other required college curriculum projects </h3>
-            <p> Below is a list of some notable required projects and their associated college classes that I have completed.
+            <p class="project-p"> Below is a list of some notable required projects and their associated college classes that I have completed.
                 Since these are most likely still part of the Western Carolina Computer Science curriculum, I cannot post 
                 the source code for these projects here to avoid cheating.
                 Please contact me anytime to have one or more of these project's source code sent.
@@ -172,7 +180,7 @@
                     
               <li>
                   CS 465 Computer Networking - Chargen client and server implemented using TCP and UDP. 
-                  Stream of bytes sent back can be <a class="link--light" href ="https://en.wikipedia.org/wiki/Character_Generator_Protocol#Sample_session">de facto</a>, 
+                  Stream of bytes sent back can be <a class="link dark" href ="https://en.wikipedia.org/wiki/Character_Generator_Protocol#Sample_session">de facto</a>, 
                   alphanumeric, numeric, or a deck of cards.
                   Written in Java.
                   </li>
@@ -193,25 +201,27 @@
                   
             </ul>
                 <br>
+                <hr/>
           </section>
+          
           <section class="project-section">
             <h3 class="section__title"> In Progress Projects. </h3>
-            <p> Below is a list of some project(s) which I am currently working now.
+            <p class="project-p"> Below is a list of some project(s) which I am currently working now.
                Since these are in progress there currently is not much documentation on them yet.
-               However, please follow their GitHubs for recent updates.
+               Please follow their repo pages on GitHub for recent updates.
             </p>
 
             <ul>
               <li>
-                Reddit Comment Stream - Using the popular social media platform's API named <a class="link--light" href ="https://praw.readthedocs.io/en/latest/">PRAW</a>, 
+                Reddit Comment Stream - Using the popular social media platform's API named <a class="link dark" href ="https://praw.readthedocs.io/en/latest/">PRAW</a>, 
                 I am building a web application which will frequently stream newest comments in a thread.
                 Similar applications have already been built, my plan is to make the experience more simplistic and include full screen functionality.
                 Main usages would be to stream comments from live sports or news events.
                 Written in Python using Django, see below for link to the project's GitHub. 
                 <br>
                 <br>
-                <a href="https://github.com/maxkernchen/RedditCommentStream" style="margin-left: 0px" class="button--github">
-                  Reddit Comment Stream GitHub <i class="fab fa-github"></i></a>
+                <a href="https://github.com/maxkernchen/RedditCommentStream" class="hvr-icon-forward">
+                  Reddit Comment Stream GitHub <i class="fab fa-github hvr-icon"></i></a>
 
 
               </li>
@@ -219,9 +229,6 @@
 
           </section>
        </article>
-
-        
-    
 
        <script src="max.kernchen.github.io.projects.js"></script>
   </body>

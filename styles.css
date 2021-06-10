@@ -17,8 +17,8 @@ Also remove an __ if not needed to match naming conventions
     --off-white-color: #e2dfdf;
     --terminal-green: #41FF00; 
     
-    --common-button-color: rgb(22, 94, 82);
-    --github-button-color:rgb(94, 41, 87);
+    --playstore-color: rgb(22, 94, 82);
+    --github--color:rgb(170, 142, 166);
   }
   
   /* normalized */
@@ -36,7 +36,7 @@ Also remove an __ if not needed to match naming conventions
     color:var(--off-black-color);
   }
   .project-p{
-    font-weight: 400;
+    font-weight: 200;
     color:var(--off-white-color)
   }
   
@@ -331,8 +331,11 @@ Also remove an __ if not needed to match naming conventions
   transition: .2s ease-out;
   cursor: pointer;
 }
-.link.project{
+.link.dark{
   color: var(--off-white-color);
+}
+.link.link.dark:hover{
+  color: var(--accent-color-project);
 }
 
 .link:hover {
@@ -406,4 +409,106 @@ Also remove an __ if not needed to match naming conventions
   height: 1rem;
   left: -1.5rem;
   top: 0.3rem;
+}
+
+/* Third party CSS styles with minor changes to padding,color and borders.:
+
+/*!
+ * Hover.css (http://ianlunn.github.io/Hover/)
+ * Version: 2.3.2
+ * Author: Ian Lunn @IanLunn
+ * Author URL: http://ianlunn.co.uk/
+ * Github: https://github.com/IanLunn/Hover
+
+ * Hover.css Copyright Ian Lunn 2017. Generated with Sass.
+ */
+
+.hvr-icon-forward {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  padding: 10px 22px;
+  border-radius: 2%;
+  font-weight: 600;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  
+  background-color: var(--github--color);
+}
+.hvr-icon-forward .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-icon-forward:hover .hvr-icon, .hvr-icon-forward:focus .hvr-icon, .hvr-icon-forward:active .hvr-icon {
+  -webkit-transform: translateX(4px);
+  transform: translateX(4px);
+}
+.hvr-icon-forward.playstore{
+  background-color: var(--playstore-color) ;
+}
+.hvr-icon-forward.secondBtn{
+  margin-left: 75px;
+}
+
+@-webkit-keyframes hvr-icon-down {
+  0%,
+	50%,
+	100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25%,
+	75% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+@keyframes hvr-icon-down {
+  0%,
+	50%,
+	100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25%,
+	75% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+.hvr-icon-down {
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  padding: 10px 22px;
+  border-radius: 5%;
+  background-color: antiquewhite;
+
+}
+.hvr-icon-down .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.hvr-icon-down:hover .hvr-icon, .hvr-icon-down:focus .hvr-icon, .hvr-icon-down:active .hvr-icon {
+  -webkit-animation-name: hvr-icon-down;
+  animation-name: hvr-icon-down;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+.hvr-icon-down.secondBtn{
+  margin-left: 75px;
 }
