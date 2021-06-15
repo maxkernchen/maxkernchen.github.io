@@ -25,6 +25,7 @@ var terminalMessage = 'maxkernchen@maxkernchen.github.io:./welcome.sh <br>' +
    // use this wait time to let the user see the text transformation.
   var slowestTypeSpeed = slowerTypeSpeed + 100;
 
+
 async function type(){
 let i = 0;
 document.getElementById('hidden-input-field').disabled = true;
@@ -262,6 +263,7 @@ input.addEventListener('keyup',  async function(event) {
         document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Invalid Input!');
         await new Promise(r => setTimeout(r, 1000));
   }
+  // dont reset if we are waiting for promises to finish.
   if(!inPromise){
     resetTerminalAfterInput();
   }
@@ -275,18 +277,26 @@ input.addEventListener('keyup',  async function(event) {
     return new Promise(function(resolve, reject) {
       resolve(emailTransform());    
     }).then(function(result) {
-      console.log(result);
+      //console.log(result);
       return phoneTransform(); 
     }).then(function(result){
-      console.log(result);
+     // console.log(result);
       return linkedinTransform();
     }).then(function(result){
-      console.log(result);
+     // console.log(result);
       return Promise.resolve('transformed all contacts');
     });
    
   }
 
+
+  function toggleMenu(){
+
+      let menuList = document.getElementById('menu-list');
+      menuList.classList.toggle('showing');
+      
+      
+  }
 
 // put focus back in input field when clicking on div for terminal
 document.getElementsByClassName('terminal')[0]
@@ -303,3 +313,12 @@ document.getElementById('phone-contact').addEventListener('click', phoneTransfor
 document.getElementById('linkedin-contact').addEventListener('click', linkedinTransform);
 // menu item for contact info, will smooth scroll and activate methods to transform contact info
 document.getElementById('contact-menu').addEventListener('click', transformAllContactInfo);
+// call function to add/remove classes for collapsed menu
+document.getElementById('collapsed-menu').addEventListener('click', toggleMenu);
+// when window is resized to > 800 we want to remove the showing class if it still exists
+// otherwise menu will still open when sized down to mobile view
+window.addEventListener('resize', function(event){
+   if(window.innerWidth > 800){
+   document.getElementById('menu-list').classList.remove('showing');
+   }
+});
