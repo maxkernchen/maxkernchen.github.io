@@ -291,11 +291,8 @@ input.addEventListener('keyup',  async function(event) {
 
 
   function toggleMenu(){
-
       let menuList = document.getElementById('menu-list');
-      menuList.classList.toggle('showing');
-      
-      
+      menuList.classList.toggle('showing');   
   }
 
 // put focus back in input field when clicking on div for terminal
@@ -316,7 +313,7 @@ document.getElementById('contact-menu').addEventListener('click', transformAllCo
 // call function to add/remove classes for collapsed menu
 document.getElementById('collapsed-menu').addEventListener('click', toggleMenu);
 // when window is resized to > 800 we want to remove the showing class if it still exists
-// otherwise menu will still open when sized down to mobile view
+// otherwise menu will still be opened when sized down to mobile view
 window.addEventListener('resize', function(event){
    if(window.innerWidth > 800){
    document.getElementById('menu-list').classList.remove('showing');

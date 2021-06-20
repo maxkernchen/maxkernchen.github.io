@@ -56,6 +56,14 @@ function scrollListener(){
     setActiveBtnScroll(btns[4]);
   }
 } 
+function toggleMenu(){
+  let menuList = document.getElementById('menu-list');
+  let content = document.getElementById('project-content');
+  menuList.classList.toggle('showing');   
+  content.classList.toggle('project-menu-margin');
+}
+// call function to add/remove classes for collapsed menu
+document.getElementById('collapsed-menu').addEventListener('click', toggleMenu);
+window.addEventListener('scroll', scrollListener);
 
-window.addEventListener('scroll',scrollListener);
 

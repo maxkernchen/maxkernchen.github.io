@@ -36,7 +36,7 @@ Also remove an __ if not needed to match naming conventions
     color:var(--off-black-color);
   }
   .project-p{
-    font-weight: 200;
+    font-weight: 300;
     color:var(--off-white-color)
   }
   
@@ -198,7 +198,7 @@ Also remove an __ if not needed to match naming conventions
     grid-area: contact-grid;
     grid-template-columns: repeat(3, [col] auto);
     grid-template-rows: 200px;
-    column-gap: 200px;
+    column-gap: 150px;
     justify-self: center;
 
        
@@ -221,12 +221,9 @@ Also remove an __ if not needed to match naming conventions
   background-color: var(--light-gray-color);
   grid-area: header;
   justify-self: center;
-
-
 }
 
-  
-  
+
   nav {
     background-color: var(--light-gray-color);
   }
@@ -240,6 +237,10 @@ Also remove an __ if not needed to match naming conventions
     background-color: var(--light-gray-color);
     
   }
+  .menu.dark{
+    background-color: var(--off-black-color);
+    color: var(--off-white-color);
+  }
   .menu-container{
     grid-area: menu;
   }
@@ -248,9 +249,7 @@ Also remove an __ if not needed to match naming conventions
     text-align: left;
     overflow: hidden;
     list-style: none;
-    background-color: var(--off-black-color);
-    border-bottom: 1px solid var(--off-white-color);
-    
+    background-color: var(--off-black-color);   
   }
   .terminal {
     width: 90%;
@@ -286,13 +285,67 @@ Also remove an __ if not needed to match naming conventions
     font-weight: 200;
     color: var(--off-black-color);
   }
-
-  
   .toggle {
     display: none;
   }
+  #project-container{
+    background-color: var(--off-black-color);
+    color: var(--white-color);
+  }
+  #project-content{
+    display: flex;
+    margin-left: 260px;
+    flex-direction: column;
+    border-left: 2px solid var(--off-white-color);
+    border-top: 1px solid var(--off-white-color);
+    padding-left: 10px;
+  }
+  
+  #project-nav {
+    font-weight: 400;
+    position: fixed;
+    width: 260px;
+    z-index: 100;
+    background-color: var(--off-black-color);
+    border-top: 1px solid var(--off-white-color);
+    border-bottom: 1px solid var(--off-white-color);
+  }
+  
+  
+  #project-nav ul {
+    list-style: none;
+    margin-left: -30px; 
+  }
+  
+  #project-nav ul ul{
+    margin-left:-20px;
+  }
+   
+  #project-nav li:hover {
+    color:var(--accent-color-project);
+    cursor: pointer;
+    transition: .2s ease-out;
+  }
+  #project-nav li {
+    color:var(--off-white-color);
+  }
+  
+  #project-nav .selected {
+    color:var(--accent-color-project);
+    position: relative;
+    list-style: none;
+  }
+  
+  #project-nav .selected:after {
+    position: absolute;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    left: -1.5rem;
+    top: 0.3rem;
+  }
  
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1080px) {
     
     .toggle{
       display: block;
@@ -300,6 +353,9 @@ Also remove an __ if not needed to match naming conventions
     }
     .collapsed{
       margin: 20px;
+    }
+    .terminal{
+      width: 100%;
     }
    
     #container{
@@ -324,17 +380,33 @@ Also remove an __ if not needed to match naming conventions
       border-width: 5px;
       border-style: solid;
       border-color: var(--off-black-color);
-      position: fixed;
+      opacity: .8;
+      position: absolute;
       z-index: 100;
 
+    }
+    .menu.dark {
+      border-color: var(--off-white-color);
+    }
+    
+    #project-nav {
+      display: none;
+      
+    }
+    #project-content{
+      display: flex;
+      margin-left: 0px;
+      flex-direction: column;
+      border-left: none;
+      border-top: 2px solid var(--off-white-color);
+      padding-left: 10px;
     }
     
     .showing{
       display: block;
     }
    
-  
-   
+ 
   }
  
 .link {
@@ -363,65 +435,7 @@ Also remove an __ if not needed to match naming conventions
   font-weight: 500;
   
 }
-#project-container{
-  background-color: var(--off-black-color);
-  color: var(--white-color);
-}
-#project-content{
-  display: flex;
-  margin-left: 260px;
-  flex-direction: column;
- 
-  border-left: 2px solid var(--off-white-color);
-  padding-left: 10px;
-}
 
-#project-nav {
-  font-weight: 400;
-  position: fixed;
-  width: 260px;
-  z-index: 100;
-  background-color: var(--off-black-color);
-}
-
-
-#project-nav ul {
-  list-style: none;
-  margin-left: -30px;
-  
-
-}
-#project-nav ul ul{
-  margin-left:-20px;
-}
-
-
-#project-nav li:hover {
-  color:var(--accent-color-project);
-  cursor: pointer;
-  transition: .2s ease-out;
-}
-#project-nav li {
-  color:var(--off-white-color);
-
-  
-
-}
-
-#project-nav .selected {
-  color:var(--accent-color-project);
-  position: relative;
-  list-style: none;
-}
-
-#project-nav .selected:after {
-  position: absolute;
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  left: -1.5rem;
-  top: 0.3rem;
-}
 
 /* Third party CSS styles with minor changes to padding,color and borders.:
 
