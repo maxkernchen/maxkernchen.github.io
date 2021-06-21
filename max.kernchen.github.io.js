@@ -315,7 +315,7 @@ document.getElementById('collapsed-menu').addEventListener('click', toggleMenu);
 // when window is resized to > 800 we want to remove the showing class if it still exists
 // otherwise menu will still be opened when sized down to mobile view
 window.addEventListener('resize', function(event){
-   if(window.innerWidth > 800){
+   if(window.innerWidth > 1080){
    document.getElementById('menu-list').classList.remove('showing');
    }
 });

@@ -64,6 +64,13 @@ function toggleMenu(){
 }
 // call function to add/remove classes for collapsed menu
 document.getElementById('collapsed-menu').addEventListener('click', toggleMenu);
+// change nav when scrolled to element
 window.addEventListener('scroll', scrollListener);
+// make sure that menu is not still open when going from mobile to full size and then back
+window.addEventListener('resize', function(event){
+  if(window.innerWidth > 1080){
+  document.getElementById('menu-list').classList.remove('showing');
+  }
+});
 
 

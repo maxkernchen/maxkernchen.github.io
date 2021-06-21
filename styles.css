@@ -4,216 +4,88 @@ TODO go through and replace once used items with id #
 Also remove an __ if not needed to match naming conventions
 */
 :root {
-    
-    
     --accent-color: #d6f0cf;
     --accent-color-project:#59a6d3;
-   
-    --white-color: #FAFBFC;
     --light-gray-color: #b4aeab;
-    
     --off-black-color: #393d38; 
-    --bg-color: #F8F8FA;
     --off-white-color: #e2dfdf;
-    --terminal-green: #41FF00; 
-    
     --playstore-color: rgb(22, 94, 82);
     --github--color:rgb(170, 142, 166);
   }
   
-  /* normalized */
-  html, body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    background-color:var(--light-gray-color);
+html, body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  background-color:var(--light-gray-color);
+}
   
-  }
+p {
+  font-weight: 300;
+  color:var(--off-black-color);
+}
+.project-p{
+  font-weight: 300;
+  color:var(--off-white-color)
+}
   
-  p {
-    font-weight: 300;
-    color:var(--off-black-color);
-  }
-  .project-p{
-    font-weight: 300;
-    color:var(--off-white-color)
-  }
-  
+a, a:hover {
+  text-decoration: none;
+  color:var(--off-black-color);
+}
 
-  
-  a, a:hover {
-    text-decoration: none;
-    color:var(--off-black-color);
-  }
-  
-  h1 {
-    font-weight: 500;
-  
-    
-  }
+h1 {
+  font-weight: 500;
+}
+nav {
+  background-color: var(--light-gray-color);
+}
 
+.project-section {
+  color: var(--off-white-color)
+}
 
-  /* global components */
-  
-  /* typography */
-  .project-section {
-    color: var(--off-white-color)
-  }
-  
-  
- 
-  
-  
-  /* buttons */
-  .button--primary {
-    padding: 10px 22px;
-    background-color: var(--accent-color);
-    color: white;
-    position: relative;
-    text-decoration: none;
-    border: 0;
-    transition: all .3s ease-out;
-  }
-  
-  .button--primary:after {
-    position: absolute;
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--accent-color-light);
-    right: -0.4rem;
-    top: -0.4rem;
-    transition: all 0.3s ease-out;
-  }
-  
-  .button--primary:hover {
-    text-shadow: 0px 1px 1px var(--accent-color-dark);
-    color: white;
-    transform: translate3D(0, -3px, 0);
-  }
-  
-  .button--primary:hover::after {
-    transform: rotate(90deg);
-  }
-  
-  .button--common {
-    padding: 10px 22px;
-    background-color: var(--common-button-color);
-    color: white;
-    position: relative;
-    text-decoration: none;
-    border: 0;
-    transition: all .3s ease-out;
-  }
-  
-  .button--common:after {
-    position: absolute;
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--accent-color-light);
-    right: -0.4rem;
-    top: -0.4rem;
-    transition: all 0.3s ease-out;
-  }
-  
-  .button--common:hover {
-    text-shadow: 0px 1px 1px var(--accent-color-dark);
-    color: white;
-    transform: translate3D(0, -3px, 0);
-  }
-  
-  .button--common:hover::after {
-    transform: rotate(90deg);
-  }
-  
-  .button--github {
-    padding: 10px 22px;
-    background-color: var(--github-button-color);
-    color: white;
-    position: relative;
-    margin-left: 50px; 
-    text-decoration: none;
-    border: 0;
-    transition: all .3s ease-out;
-  }
-  
-  .button--github:after {
-    position: absolute;
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--accent-color-light);
-    right: -0.4rem;
-    top: -0.4rem;
-    transition: all 0.3s ease-out;
-  }
-  
-  .button--github:hover {
-    text-shadow: 0px 1px 1px var(--accent-color-dark);
-    color: white;
-    transform: translate3D(0, -3px, 0);
-  }
-  
-  .button--github:hover::after {
-    transform: rotate(90deg);
-  }
 
 .profile-pic{
   border-radius: 50%;
 }
   
-  .button--secondary {
-    padding: 10px 22px;
-    border: 2px solid var(--accent-color);
-    transition: all 0.5s ease-out;
-  }
+/* grid layout for all containing divs on home page*/
+#container { 
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 75px 300px 300px 300px;
+  row-gap: 40px;  
+  grid-template-areas:
+      'menu menu .'
+      '. header .'
+      '. terminal .'
+      'contact-grid contact-grid contact-grid'
+        
+}
+
+
+#container--contact {  
+  display: grid;
+  grid-area: contact-grid;
+  grid-template-columns: repeat(3, [col] auto);
+  grid-template-rows: 200px;
+  column-gap: 150px;
+  justify-self: center;
+
+      
+}
+
+.contact--item{
+  text-align: left;
+  font-weight: 300;
+  font-size: xx-large;
+  transition: .2s ease-out;
   
-  .button--secondary:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-  }
-  /* grid layout for all containing divs on home page*/
-  #container { 
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 75px 300px 300px 300px;
-    row-gap: 40px;  
-    grid-template-areas:
-        'menu menu .'
-        '. header .'
-        '. terminal .'
-        'contact-grid contact-grid contact-grid'
-          
-       
-  }
-
-
-
-   #container--contact { 
-    
-    display: grid;
-  
-    grid-area: contact-grid;
-    grid-template-columns: repeat(3, [col] auto);
-    grid-template-rows: 200px;
-    column-gap: 150px;
-    justify-self: center;
-
-       
-  }
-
- .contact--item{
-   text-align: left;
-   font-weight: 300;
-   font-size: xx-large;
-   transition: .2s ease-out;
-   
- }
- .contact--item:hover{
+}
+.contact--item:hover{
   color: var(--accent-color);
- }
+}
 
 .header{
 
@@ -223,191 +95,186 @@ Also remove an __ if not needed to match naming conventions
   justify-self: center;
 }
 
-
-  nav {
-    background-color: var(--light-gray-color);
-  }
+.menu {
+  display: block;
+  margin: 0;
+  text-align: left;
+  overflow: hidden;
+  list-style: none;
+  background-color: var(--light-gray-color);
   
-  .menu {
-    display: block;
-    margin: 0;
-    text-align: left;
-    overflow: hidden;
-    list-style: none;
-    background-color: var(--light-gray-color);
-    
-  }
-  .menu.dark{
-    background-color: var(--off-black-color);
-    color: var(--off-white-color);
-  }
-  .menu-container{
-    grid-area: menu;
-  }
-  .project-menu{
-    margin: 0;
-    text-align: left;
-    overflow: hidden;
-    list-style: none;
-    background-color: var(--off-black-color);   
-  }
-  .terminal {
-    width: 90%;
-    height: 200px;
-    text-align: left;
-    color: white;
-    background-color: black;
-    padding-left: 1rem;
-    border-radius: 4px;
-    justify-self: center;
-    grid-area: terminal;
-    box-shadow: 0px 8px 10px 8px black;
-  }
-  #hidden-input{
-    position: absolute;
-    z-index: 999;
-    background-color: black;
-  }
-  #hidden-input-field{
-    position: absolute;
-    z-index: 999;
-    border: none;
-    border-width: 0px;
-    background-color: black;
-  }
-  textarea:focus, input:focus{
-    outline: none;
+}
+.menu.dark{
+  background-color: var(--off-black-color);
+  color: var(--off-white-color);
+}
+.menu-container{
+  grid-area: menu;
+}
+.project-menu{
+  margin: 0;
+  text-align: left;
+  overflow: hidden;
+  list-style: none;
+  background-color: var(--off-black-color);   
+}
+.terminal {
+  width: 90%;
+  height: 200px;
+  text-align: left;
+  color: white;
+  background-color: black;
+  padding-left: 1rem;
+  border-radius: 4px;
+  justify-self: center;
+  grid-area: terminal;
+  box-shadow: 0px 8px 10px 8px black;
+}
+#hidden-input{
+  position: absolute;
+  z-index: 999;
+  background-color: black;
+}
+#hidden-input-field{
+  position: absolute;
+  z-index: 999;
+  border: none;
+  border-width: 0px;
+  background-color: black;
+}
+textarea:focus, input:focus{
+  outline: none;
 }
 
-  .menu-item {
-    display: inline-block;
-    padding: 20px;
-    font-weight: 200;
-    color: var(--off-black-color);
+.menu-item {
+  display: inline-block;
+  padding: 20px;
+  font-weight: 200;
+  color: var(--off-black-color);
+}
+.toggle {
+  display: none;
+}
+#project-container{
+  background-color: var(--off-black-color);
+  color: var(--white-color);
+}
+#project-content{
+  display: flex;
+  margin-left: 260px;
+  flex-direction: column;
+  border-left: 2px solid var(--off-white-color);
+  border-top: 1px solid var(--off-white-color);
+  padding-left: 10px;
+}
+
+#project-nav {
+  font-weight: 400;
+  position: fixed;
+  width: 260px;
+  z-index: 100;
+  background-color: var(--off-black-color);
+  border-top: 1px solid var(--off-white-color);
+  border-bottom: 1px solid var(--off-white-color);
+}
+
+
+#project-nav ul {
+  list-style: none;
+  margin-left: -30px; 
+}
+
+#project-nav ul ul{
+  margin-left:-20px;
+}
+  
+#project-nav li:hover {
+  color:var(--accent-color-project);
+  cursor: pointer;
+  transition: .2s ease-out;
+}
+#project-nav li {
+  color:var(--off-white-color);
+}
+
+#project-nav .selected {
+  color:var(--accent-color-project);
+  position: relative;
+  list-style: none;
+}
+
+#project-nav .selected:after {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  left: -1.5rem;
+  top: 0.3rem;
+}
+ 
+@media screen and (max-width: 1080px) {
+  
+  .toggle{
+    display: block;
+    
   }
-  .toggle {
-    display: none;
+  .collapsed{
+    margin: 20px;
   }
-  #project-container{
-    background-color: var(--off-black-color);
-    color: var(--white-color);
+  .terminal{
+    width: 100%;
   }
-  #project-content{
+  
+  #container{
     display: flex;
-    margin-left: 260px;
     flex-direction: column;
-    border-left: 2px solid var(--off-white-color);
-    border-top: 1px solid var(--off-white-color);
-    padding-left: 10px;
+    
+  }
+  #container--contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    
+  }
+  .menu-item {
+    display: block;
+    padding: 15px;
+    margin-left: -50px;
+  }
+  .menu {
+    display: none;
+    border-radius: 5%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--off-black-color);
+    opacity: .8;
+    position: absolute;
+    z-index: 100;
+
+  }
+  .menu.dark {
+    border-color: var(--off-white-color);
   }
   
   #project-nav {
-    font-weight: 400;
-    position: fixed;
-    width: 260px;
-    z-index: 100;
-    background-color: var(--off-black-color);
-    border-top: 1px solid var(--off-white-color);
-    border-bottom: 1px solid var(--off-white-color);
-  }
-  
-  
-  #project-nav ul {
-    list-style: none;
-    margin-left: -30px; 
-  }
-  
-  #project-nav ul ul{
-    margin-left:-20px;
-  }
-   
-  #project-nav li:hover {
-    color:var(--accent-color-project);
-    cursor: pointer;
-    transition: .2s ease-out;
-  }
-  #project-nav li {
-    color:var(--off-white-color);
-  }
-  
-  #project-nav .selected {
-    color:var(--accent-color-project);
-    position: relative;
-    list-style: none;
-  }
-  
-  #project-nav .selected:after {
-    position: absolute;
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    left: -1.5rem;
-    top: 0.3rem;
-  }
- 
-  @media screen and (max-width: 1080px) {
+    display: none;
     
-    .toggle{
-      display: block;
-      
-    }
-    .collapsed{
-      margin: 20px;
-    }
-    .terminal{
-      width: 100%;
-    }
-   
-    #container{
-      display: flex;
-      flex-direction: column;
-      
-    }
-    #container--contact{
-      display: flex;
-      flex-direction: column;
-      align-items: center; 
-      
-    }
-    .menu-item {
-      display: block;
-      padding: 15px;
-      margin-left: -50px;
-    }
-    .menu {
-      display: none;
-      border-radius: 5%;
-      border-width: 5px;
-      border-style: solid;
-      border-color: var(--off-black-color);
-      opacity: .8;
-      position: absolute;
-      z-index: 100;
+  }
+  #project-content{
+    display: flex;
+    margin-left: 0px;
+    flex-direction: column;
+    border-left: none;
+    border-top: 2px solid var(--off-white-color);
+    padding-left: 10px;
+  }
+  
+  .showing{
+    display: block;
+  }
+  
 
-    }
-    .menu.dark {
-      border-color: var(--off-white-color);
-    }
-    
-    #project-nav {
-      display: none;
-      
-    }
-    #project-content{
-      display: flex;
-      margin-left: 0px;
-      flex-direction: column;
-      border-left: none;
-      border-top: 2px solid var(--off-white-color);
-      padding-left: 10px;
-    }
-    
-    .showing{
-      display: block;
-    }
-   
- 
-  }
+}
  
 .link {
   font-weight: 400;
@@ -418,7 +285,7 @@ Also remove an __ if not needed to match naming conventions
 .link.dark{
   color: var(--off-white-color);
 }
-.link.link.dark:hover{
+.link.dark:hover{
   color: var(--accent-color-project);
 }
 
@@ -437,7 +304,8 @@ Also remove an __ if not needed to match naming conventions
 }
 
 
-/* Third party CSS styles with minor changes to padding,color and borders.:
+/* Third party CSS styles with minor changes
+ to padding ,color, and borders.
 
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)
