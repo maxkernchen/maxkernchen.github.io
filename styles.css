@@ -230,6 +230,12 @@ textarea:focus, input:focus{
     flex-direction: column;
     
   }
+  #project-container{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
   #container--contact{
     display: flex;
     flex-direction: column;
