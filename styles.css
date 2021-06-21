@@ -219,7 +219,8 @@ textarea:focus, input:focus{
     
   }
   .collapsed{
-    margin: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
   }
   .terminal{
     width: 100%;
