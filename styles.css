@@ -211,6 +211,33 @@ textarea:focus, input:focus{
   left: -1.5rem;
   top: 0.3rem;
 }
+
+.link {
+  font-weight: 400;
+  font-size: large;
+  transition: .2s ease-out;
+  cursor: pointer;
+}
+.link.dark{
+  color: var(--off-white-color);
+}
+.link.dark:hover{
+  color: var(--accent-color-project);
+}
+
+.link:hover {
+  color: var(--accent-color);
+}
+
+.title {
+  font-weight: 600;
+  color: var(--off-black-color);
+}
+.subtitle{
+  margin: -10px auto 10px auto;
+  font-weight: 500;
+  
+}
  
 @media screen and (max-width: 1080px) {
   
@@ -308,32 +335,7 @@ textarea:focus, input:focus{
 
 }
  
-.link {
-  font-weight: 400;
-  font-size: large;
-  transition: .2s ease-out;
-  cursor: pointer;
-}
-.link.dark{
-  color: var(--off-white-color);
-}
-.link.dark:hover{
-  color: var(--accent-color-project);
-}
 
-.link:hover {
-  color: var(--accent-color);
-}
-
-.title {
-  font-weight: 600;
-  color: var(--off-black-color);
-}
-.subtitle{
-  margin: -10px auto 10px auto;
-  font-weight: 500;
-  
-}
 
 
 /* Third party CSS styles with minor changes
