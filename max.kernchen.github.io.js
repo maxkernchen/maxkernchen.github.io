@@ -51,10 +51,14 @@ document.getElementById('hidden-input-field').disabled = true;
   if(i >= terminalMessageTyping.length)
   {
    
-    // allow inputs after typing has finished.
+    // allow inputs after typing has finished, but only if not on mobile.
+    // On mobile keyboard shifts site, better for user to 
+    // click on terminal on their own
     document.getElementById('hidden-input-field').disabled = false;
-    document.getElementById('hidden-input-field').focus();
-    document.getElementById('hidden-input-field').select();
+    if(window.innerWidth > 1080){
+      document.getElementById('hidden-input-field').focus();
+      document.getElementById('hidden-input-field').select();
+    }
     flashingCommand();
     
 
