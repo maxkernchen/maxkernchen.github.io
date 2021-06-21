@@ -273,7 +273,7 @@ input.addEventListener('keyup',  async function(event) {
   // use a promise to wait for each function to finish before calling the next
   // transform all 3 contacts sequentially 
    async function transformAllContactInfo(){
-     smoothScrollToEle(document.getElementById('container--contact'));
+     smoothScrollToEle(document.getElementById('container-contact'));
     return new Promise(function(resolve, reject) {
       resolve(emailTransform());    
     }).then(function(result) {
