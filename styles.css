@@ -116,6 +116,7 @@ nav {
   text-align: left;
   overflow: hidden;
   list-style: none;
+  min-height: 75px;
   background-color: var(--off-black-color);   
 }
 .terminal {
@@ -270,6 +271,14 @@ textarea:focus, input:focus{
     
   }
   #project-content{
+    display: flex;
+    margin-left: 0px;
+    flex-direction: column;
+    border-left: none;
+    border-top: 2px solid var(--off-white-color);
+    padding-left: 10px;
+  }
+  .project-menu{
     display: flex;
     margin-left: 0px;
     flex-direction: column;
