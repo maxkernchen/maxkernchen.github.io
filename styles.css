@@ -65,7 +65,7 @@ nav {
 }
 
 
-#container--contact {  
+#container-contact {  
   display: grid;
   grid-area: contact-grid;
   grid-template-columns: repeat(3, [col] auto);
@@ -76,14 +76,14 @@ nav {
       
 }
 
-.contact--item{
+.contact-item{
   text-align: left;
   font-weight: 300;
   font-size: xx-large;
   transition: .2s ease-out;
   
 }
-.contact--item:hover{
+.contact-item:hover{
   color: var(--accent-color);
 }
 
@@ -236,11 +236,14 @@ textarea:focus, input:focus{
     
   }
   
-  #container--contact{
+  #container-contact{
     display: flex;
     flex-direction: column;
     align-items: center; 
     
+  }
+  .contact-item{
+    font-size: large; 
   }
   .menu-item {
     display: block;
