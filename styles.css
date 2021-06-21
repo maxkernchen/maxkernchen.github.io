@@ -234,6 +234,7 @@ textarea:focus, input:focus{
   #project-container{
     display: flex;
     flex-direction: column;
+    max-width: 900px;
     
   }
   
@@ -258,6 +259,7 @@ textarea:focus, input:focus{
     border-style: solid;
     border-color: var(--off-black-color);
     opacity: .8;
+    font-size: xx-large;
     position: absolute;
     z-index: 100;
 
@@ -288,6 +290,19 @@ textarea:focus, input:focus{
   
   .showing{
     display: block;
+  }
+  .project-p{
+    font-size: large;
+  }
+  .hvr-icon-down {
+    font-size: xx-large;
+    
+  }
+  .hvr-icon-forward{
+    font-size: xx-large;
+  }
+  .linK{
+    font-size: xx-large;
   }
   
 
