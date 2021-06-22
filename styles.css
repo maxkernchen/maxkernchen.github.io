@@ -263,7 +263,6 @@ textarea:focus, input:focus{
   }
   .terminal{
     margin: auto;
-    width: 80%;
     padding: 20px;
     max-height: 200px;
   }
@@ -326,10 +325,10 @@ textarea:focus, input:focus{
     display: block;
   }
   .hvr-icon-forward{
-    font-size: 2vmax;
+    font-size: 25px;
   }
   .hvr-icon-down{
-    font-size: 2vmax;
+    font-size: 25px;
   }
   /* larger font for items in collapsed menu */
   .link.project.large{
@@ -337,12 +336,12 @@ textarea:focus, input:focus{
   }
   /* menu bars for project page need to be larger */
   .collapsed.project{
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 20px;
     font-size: 4vmax;
   }
   .MathJax {
-    font-size: 3vmax;
+    font-size: 2vmax;
   }
 
 }
