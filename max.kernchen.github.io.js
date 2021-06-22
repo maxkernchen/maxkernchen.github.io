@@ -117,7 +117,7 @@ async function emailTransform(event){
     let emailElement = document.getElementById('email-contact');
     // replace with anchor for mailto link
     emailElement.innerHTML = 
-    '<a id="email-anchor" class="contact--item" href="mailto:max.f.kernchen@gmail.com"></a>';
+    '<a id="email-anchor" class="contact-item" href="mailto:max.f.kernchen@gmail.com"></a>';
     let emailAnchor = document.getElementById('email-anchor');
     await new Promise(r => setTimeout(r, slowestTypeSpeed));
     emailAnchor.innerHTML = 'mail';
@@ -148,7 +148,7 @@ async function phoneTransform(){
   
     let phoneElement = document.getElementById('phone-contact')
     phoneElement.innerHTML = 
-    '<a id="phone-anchor" class="contact--item" href="tel:7047286806"></a>';
+    '<a id="phone-anchor" class="contact-item" href="tel:7047286806"></a>';
 
     let phoneAnchor = document.getElementById('phone-anchor');
     await new Promise(r => setTimeout(r, slowestTypeSpeed));
@@ -180,7 +180,7 @@ async function linkedinTransform(){
 
     let linkedinElement = document.getElementById('linkedin-contact')
     linkedinElement.innerHTML = 
-    '<a id="linkedin-anchor" class="contact--item"'+
+    '<a id="linkedin-anchor" class="contact-item"'+
     'href="https://www.linkedin.com/in/maxkernchen/"></a>'; 
     // dont need to remove any text here just adding.
     let linkedinAnchor = document.getElementById('linkedin-anchor');
