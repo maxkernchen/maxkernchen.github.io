@@ -111,11 +111,25 @@ nav {
 .menu-container{
   grid-area: menu;
 }
+#project-container{
+  background-color: var(--off-black-color);
+  color: var(--white-color);
+  display: grid;
+  grid-template-columns: 1200px;
+  grid-template-rows: 40px auto;  
+  row-gap: 22px;
+  grid-template-areas:
+      'menu-area-project'
+      'content-project'
+
+  
+}
 .project-menu{
   margin: 0;
   text-align: left;
   overflow: hidden;
   list-style: none;
+  grid-area: menu-area-project;
   background-color: var(--off-black-color);   
 }
 .terminal {
@@ -155,14 +169,12 @@ textarea:focus, input:focus{
 .toggle {
   display: none;
 }
-#project-container{
-  background-color: var(--off-black-color);
-  color: var(--white-color);
-}
+
 #project-content{
   display: flex;
   margin-left: 260px;
   flex-direction: column;
+  grid-area: content-project;
   border-left: 2px solid var(--off-white-color);
   border-top: 1px solid var(--off-white-color);
   padding-left: 10px;
@@ -241,34 +253,23 @@ textarea:focus, input:focus{
  
 @media screen and (max-width: 1080px) {
   
-  body{
-    font-size: small;
-  }
+  
   .toggle{
     display: block;
-    
   }
   .collapsed{
     margin-top: 20px;
     margin-left: 40px;
-    font-size: x-large;
-    
   }
-  
-  
   .terminal{
-    width: 100%;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    max-height: 200px;
   }
-  
   #container{
     display: flex;
-    flex-direction: column;
-    
-  }
-  #project-container{
-    display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;  
   }
   
   #container-contact{
@@ -301,38 +302,47 @@ textarea:focus, input:focus{
   }
   .menu.project {
     border-color: var(--off-white-color);
-    min-width: 100px;
     
   }
+  #project-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 1080px;
+  }
+  
   
   #project-nav {
     display: none;
     
   }
   #project-content{
-    
     margin-left: 0px;
-   
     border-left: none;
     border-top: 2px solid var(--off-white-color);
     padding-left: 10px;
   }
-  .project-menu{
-    display: block;
-    border-left: none;
-    min-height: 50px;
-  }
+ 
   .showing{
     display: block;
   }
-  .link.large{
-    font-size: 50px;
+  .hvr-icon-forward{
+    font-size: 2vmax;
+  }
+  .hvr-icon-down{
+    font-size: 2vmax;
+  }
+  /* larger font for items in collapsed menu */
+  .link.project.large{
+    font-size: 3vmax ;
   }
   /* menu bars for project page need to be larger */
   .collapsed.project{
-    margin-top: 5px;
+    margin-top: 10px;
     margin-left: 20px;
-    font-size: 50px;
+    font-size: 4vmax;
+  }
+  .MathJax {
+    font-size: 3vmax;
   }
 
 }
