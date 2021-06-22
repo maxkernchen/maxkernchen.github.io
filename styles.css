@@ -104,7 +104,7 @@ nav {
   background-color: var(--light-gray-color);
   
 }
-.menu.dark{
+.menu.project{
   background-color: var(--off-black-color);
   color: var(--off-white-color);
 }
@@ -218,10 +218,10 @@ textarea:focus, input:focus{
   transition: .2s ease-out;
   cursor: pointer;
 }
-.link.dark{
+.link.project{
   color: var(--off-white-color);
 }
-.link.dark:hover{
+.link.project:hover{
   color: var(--accent-color-project);
 }
 
@@ -241,6 +241,9 @@ textarea:focus, input:focus{
  
 @media screen and (max-width: 1080px) {
   
+  body{
+    font-size: small;
+  }
   .toggle{
     display: block;
     
@@ -248,7 +251,11 @@ textarea:focus, input:focus{
   .collapsed{
     margin-top: 20px;
     margin-left: 40px;
+    font-size: x-large;
+    
   }
+  
+  
   .terminal{
     width: 100%;
   }
@@ -261,7 +268,6 @@ textarea:focus, input:focus{
   #project-container{
     display: flex;
     flex-direction: column;
-    max-width: 900px;
     
   }
   
@@ -279,6 +285,10 @@ textarea:focus, input:focus{
     padding: 15px;
     margin-left: -50px;
   }
+  .menu-item.project{
+    margin-top: 20px;
+  }
+
   .menu {
     display: none;
     border-radius: 5%;
@@ -286,13 +296,13 @@ textarea:focus, input:focus{
     border-style: solid;
     border-color: var(--off-black-color);
     opacity: .8;
-    font-size: xx-large;
     position: absolute;
     z-index: 100;
-
   }
-  .menu.dark {
+  .menu.project {
     border-color: var(--off-white-color);
+    min-width: 100px;
+    
   }
   
   #project-nav {
@@ -300,38 +310,30 @@ textarea:focus, input:focus{
     
   }
   #project-content{
-    display: flex;
+    
     margin-left: 0px;
-    flex-direction: column;
+   
     border-left: none;
     border-top: 2px solid var(--off-white-color);
     padding-left: 10px;
   }
   .project-menu{
-    display: flex;
-    margin-left: 0px;
-    flex-direction: column;
+    display: block;
     border-left: none;
-    padding-left: 10px;
+    min-height: 50px;
   }
-  
   .showing{
     display: block;
   }
-  .project-p{
-    font-size: large;
+  .link.large{
+    font-size: 50px;
   }
-  .hvr-icon-down {
-    font-size: xx-large;
-    
+  /* menu bars for project page need to be larger */
+  .collapsed.project{
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 50px;
   }
-  .hvr-icon-forward{
-    font-size: xx-large;
-  }
-  .link{
-    font-size: xx-large;
-  }
-  
 
 }
  
