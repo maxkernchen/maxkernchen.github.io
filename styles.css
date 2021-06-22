@@ -259,7 +259,7 @@ textarea:focus, input:focus{
   }
   .collapsed{
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 20px;
   }
   .terminal{
     margin: auto;

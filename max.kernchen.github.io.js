@@ -4,14 +4,14 @@ var terminalMessage = 'maxkernchen@maxkernchen.github.io:./welcome.sh <br>' +
   'Welcome to my page! On here you will find my recent projects & resume. '+
   'Feel free to contact me anytime! <br> ' +
   'Usage: <br> Enter 1 - Navigate to Projects, 2 - Navigate to GitHub, ' +
-  '3 - Contact Information:';
+  '3 - Contact Information, 4 - Download Resume:';
 
   // message for typing characters one by one.
   var terminalMessageTyping = './welcome.sh <br>' +  
   'Welcome to my page! On here you will find my recent projects & resume. '+
   'Feel free to contact me anytime! <br>' +
   'Usage: <br> Enter 1 - Navigate to Projects, 2 - Navigate to GitHub, ' +
-  '3 - Contact Information:';
+  '3 - Contact Information, 4 - Download Resume:';
 
   // some booleans if user indvidually clicks on contact info and then loads them again
   // via terminal or menu link.
@@ -262,6 +262,11 @@ input.addEventListener('keyup',  async function(event) {
             resetTerminalAfterInput();
           });
         }
+        break;
+      case '4':
+        document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Downloading Resume...');
+        await new Promise(r => setTimeout(r, 500));
+        document.getElementById('resume-anchor').click();
         break;
       default:
         document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Invalid Input!');
