@@ -265,7 +265,7 @@ textarea:focus, input:focus{
     margin: auto;
     padding: 20px;
     max-height: 200px;
-    font-size: 12px;
+    font-size: 14px;
   }
   #container{
     display: flex;
