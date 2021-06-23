@@ -1,8 +1,4 @@
-/* css variables
 
-TODO go through and replace once used items with id #
-Also remove an __ if not needed to match naming conventions
-*/
 :root {
     --accent-color: #d6f0cf;
     --accent-color-project:#59a6d3;
@@ -11,24 +7,23 @@ Also remove an __ if not needed to match naming conventions
     --off-white-color: #e2dfdf;
     --playstore-color: rgb(22, 94, 82);
     --github--color:rgb(170, 142, 166);
-  }
-  
+}
+
 html, body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   background-color:var(--light-gray-color);
 }
-  
+
 p {
-  font-weight: 300;
   color:var(--off-black-color);
 }
+
 .project-p{
-  font-weight: 300;
   color:var(--off-white-color)
 }
-  
+
 a, a:hover {
   text-decoration: none;
   color:var(--off-black-color);
@@ -37,6 +32,7 @@ a, a:hover {
 h1 {
   font-weight: 500;
 }
+
 nav {
   background-color: var(--light-gray-color);
 }
@@ -44,7 +40,6 @@ nav {
 .project-section {
   color: var(--off-white-color)
 }
-
 
 .profile-pic{
   border-radius: 50%;
@@ -64,7 +59,6 @@ nav {
         
 }
 
-
 #container-contact {  
   display: grid;
   grid-area: contact-grid;
@@ -72,8 +66,27 @@ nav {
   grid-template-rows: 200px;
   column-gap: 150px;
   justify-self: center;
+}
 
-      
+#project-container{
+  background-color: var(--off-black-color);
+  color: var(--white-color);
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 40px auto;  
+  row-gap: 22px;
+  grid-template-areas:
+      'menu-area-project'
+      'content-project'
+}
+
+.project-menu{
+  margin: 0;
+  text-align: left;
+  overflow: hidden;
+  list-style: none;
+  grid-area: menu-area-project;
+  background-color: var(--off-black-color);   
 }
 
 .contact-item{
@@ -81,14 +94,13 @@ nav {
   font-weight: 300;
   font-size: xx-large;
   transition: .2s ease-out;
-  
 }
+
 .contact-item:hover{
   color: var(--accent-color);
 }
 
 .header{
-
   text-align: center;
   background-color: var(--light-gray-color);
   grid-area: header;
@@ -102,37 +114,18 @@ nav {
   overflow: hidden;
   list-style: none;
   background-color: var(--light-gray-color);
-  
 }
+
 .menu.project{
   background-color: var(--off-black-color);
   color: var(--off-white-color);
 }
+
 .menu-container{
   grid-area: menu;
 }
-#project-container{
-  background-color: var(--off-black-color);
-  color: var(--white-color);
-  display: grid;
-  grid-template-columns: 1200px;
-  grid-template-rows: 40px auto;  
-  row-gap: 22px;
-  grid-template-areas:
-      'menu-area-project'
-      'content-project'
 
-  
-}
-.project-menu{
-  margin: 0;
-  text-align: left;
-  overflow: hidden;
-  list-style: none;
-  grid-area: menu-area-project;
-  background-color: var(--off-black-color);   
-}
-.terminal {
+#terminal {
   width: 90%;
   height: 200px;
   text-align: left;
@@ -144,11 +137,13 @@ nav {
   grid-area: terminal;
   box-shadow: 0px 8px 10px 8px black;
 }
+
 #hidden-input{
   position: absolute;
   z-index: 999;
   background-color: black;
 }
+
 #hidden-input-field{
   position: absolute;
   z-index: 999;
@@ -156,6 +151,7 @@ nav {
   border-width: 0px;
   background-color: black;
 }
+
 textarea:focus, input:focus{
   outline: none;
 }
@@ -166,6 +162,7 @@ textarea:focus, input:focus{
   font-weight: 200;
   color: var(--off-black-color);
 }
+
 .toggle {
   display: none;
 }
@@ -190,7 +187,6 @@ textarea:focus, input:focus{
   border-bottom: 1px solid var(--off-white-color);
 }
 
-
 #project-nav ul {
   list-style: none;
   margin-left: -30px; 
@@ -199,12 +195,13 @@ textarea:focus, input:focus{
 #project-nav ul ul{
   margin-left:-20px;
 }
-  
+
 #project-nav li:hover {
   color:var(--accent-color-project);
   cursor: pointer;
   transition: .2s ease-out;
 }
+
 #project-nav li {
   color:var(--off-white-color);
 }
@@ -230,9 +227,11 @@ textarea:focus, input:focus{
   transition: .2s ease-out;
   cursor: pointer;
 }
+
 .link.project{
   color: var(--off-white-color);
 }
+
 .link.project:hover{
   color: var(--accent-color-project);
 }
@@ -248,25 +247,26 @@ textarea:focus, input:focus{
 .subtitle{
   margin: -10px auto 10px auto;
   font-weight: 500;
-  
 }
  
 @media screen and (max-width: 1080px) {
   
-  
   .toggle{
     display: block;
   }
+
   .collapsed{
     margin-top: 20px;
     margin-left: 20px;
   }
-  .terminal{
+
+  #terminal{
     margin: auto;
     padding: 20px;
     max-height: 200px;
     font-size: small;
   }
+
   #container{
     display: flex;
     flex-direction: column;  
@@ -275,17 +275,19 @@ textarea:focus, input:focus{
   #container-contact{
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    
+    align-items: center;   
   }
+
   .contact-item{
     font-size: large; 
   }
+
   .menu-item {
     display: block;
     padding: 15px;
     margin-left: -50px;
   }
+
   .menu-item.project{
     margin-top: 20px;
   }
@@ -300,21 +302,21 @@ textarea:focus, input:focus{
     position: absolute;
     z-index: 100;
   }
+
   .menu.project {
     border-color: var(--off-white-color);
-    
   }
+
   #project-container{
     display: flex;
     flex-direction: column;
     max-width: 1080px;
   }
   
-  
   #project-nav {
     display: none;
-    
   }
+
   #project-content{
     margin-left: 0px;
     border-left: none;
@@ -325,12 +327,15 @@ textarea:focus, input:focus{
   .showing{
     display: block;
   }
+
   .hvr-icon-forward{
     font-size: 25px;
   }
+
   .hvr-icon-down{
     font-size: 25px;
   }
+
   /* larger font for items in collapsed menu */
   .link.project.large{
     font-size: 3vmax ;
@@ -341,16 +346,13 @@ textarea:focus, input:focus{
     margin-left: 20px;
     font-size: 4vmax;
   }
+
   .MathJax {
     font-size: 2vmax;
   }
-
 }
  
-
-
-
-/* Third party CSS styles with minor changes
+/* Third party CSS styles for button icons with minor changes
  to padding ,color, and borders.
 
 /*!

@@ -34,13 +34,13 @@ document.getElementById('hidden-input-field').disabled = true;
     // need to add full break tag at once otherwise it won't be interpreted.
     if(terminalMessageTyping.charAt(i) == '<')        
     {
-      document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend',
+      document.getElementById('terminal-typing').insertAdjacentHTML('beforeend',
       terminalMessageTyping.slice(i,i+5));
       i+=4;
     }
     else
     {
-      document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend',
+      document.getElementById('terminal-typing').insertAdjacentHTML('beforeend',
       terminalMessageTyping.charAt(i));
     }
     
@@ -73,15 +73,15 @@ var stopFlashing = false;
 var timeout = 0;
  function flashingCommand () {
     if(!stopFlashing){
-      var tempString = document.getElementsByClassName('terminal-typing')[0].innerHTML;
+      var tempString = document.getElementById('terminal-typing').innerHTML;
       if(toggle)
       {
         tempString = tempString.substr(0,tempString.length -1);
-        document.getElementsByClassName('terminal-typing')[0].innerHTML = tempString;
+        document.getElementById('terminal-typing').innerHTML = tempString;
       }
       else
       {
-        document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '█');
+        document.getElementById('terminal-typing').insertAdjacentHTML('beforeend', '█');
       }
       
       
@@ -91,7 +91,7 @@ var timeout = 0;
     }
     // only need to remove flashing block character if we start typing.
     else if(!toggle){
-      document.getElementsByClassName('terminal-typing')[0].innerHTML = tempString.substr(0,tempString.length -1);;
+      document.getElementById('terminal-typing').innerHTML = tempString.substr(0,tempString.length -1);;
     }
   }
     
@@ -100,7 +100,7 @@ var timeout = 0;
 function typeCommands(){
   // add text to current terminal
   stopFlashing = true;
-  document.getElementsByClassName('terminal-typing')[0].innerHTML = terminalMessage + 
+  document.getElementById('terminal-typing').innerHTML = terminalMessage + 
   document.getElementById('hidden-input-field').value;
   stopFlashing = false;
   toggle = false;
@@ -214,7 +214,7 @@ function smoothScrollToEle(element) {
 //helper method to reset the terminal after user input
 function resetTerminalAfterInput(){
   //reset message and input
-  document.getElementsByClassName('terminal-typing')[0].innerHTML = terminalMessage;
+  document.getElementById('terminal-typing').innerHTML = terminalMessage;
   document.getElementById('hidden-input-field').value = '';
   document.getElementById('hidden-input-field').focus();
   document.getElementById('hidden-input-field').select();
@@ -237,24 +237,24 @@ input.addEventListener('keyup',  async function(event) {
     //3 maybe download resume?? TODO
     switch(inputTxt){
       case '1':
-        document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Sending to Projects...');
+        document.getElementById('terminal-typing').insertAdjacentHTML('beforeend', '<br> Sending to Projects...');
         await new Promise(r => setTimeout(r, 500));
         window.location = 'projects.html';        
         break;
       case '2':
-        document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Sending to GitHub...');
+        document.getElementById('terminal-typing').insertAdjacentHTML('beforeend', '<br> Sending to GitHub...');
         await new Promise(r => setTimeout(r, 500));
         window.location = 'https://github.com/maxkernchen'; 
         break;
       case '3':
         // check to see if we already loaded all 3 contact elements
         if(contactPhoneLoaded && contactEmailLoaded && contactLinkedInLoaded){
-          document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Contact Information Already Loaded!');
+          document.getElementById('terminal-typing').insertAdjacentHTML('beforeend', '<br> Contact Information Already Loaded!');
           await new Promise(r => setTimeout(r, 1000));
         }
         else{
           inPromise = true;
-          document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Loading Contact Information...');
+          document.getElementById('terminal-typing').insertAdjacentHTML('beforeend', '<br> Loading Contact Information...');
           let promise = new Promise(function(resolve, reject) {
             resolve(transformAllContactInfo());
           }).then(function(result) {
@@ -264,12 +264,12 @@ input.addEventListener('keyup',  async function(event) {
         }
         break;
       case '4':
-        document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Downloading Resume...');
+        document.getElementById('terminal-typing').insertAdjacentHTML('beforeend', '<br> Downloading Resume...');
         await new Promise(r => setTimeout(r, 500));
         document.getElementById('resume-anchor').click();
         break;
       default:
-        document.getElementsByClassName('terminal-typing')[0].insertAdjacentHTML('beforeend', '<br> Invalid Input!');
+        document.getElementById('terminal-typing').insertAdjacentHTML('beforeend', '<br> Invalid Input!');
         await new Promise(r => setTimeout(r, 1000));
   }
   // dont reset if we are waiting for promises to finish.
@@ -305,7 +305,7 @@ input.addEventListener('keyup',  async function(event) {
   }
 
 // put focus back in input field when clicking on div for terminal
-document.getElementsByClassName('terminal')[0]
+document.getElementById('terminal')
         .addEventListener('click', function (event) {
           document.getElementById('hidden-input-field').focus();
           document.getElementById('hidden-input-field').select();
