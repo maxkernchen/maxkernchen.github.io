@@ -27,7 +27,7 @@ function smoothScrollTo(element, event) {
 
 }
 // add listeners for aside clicks
-for(var i = 0;i < btns.length && i < sections.length;i++ ){
+for(var i = 0; i < btns.length && i < sections.length; i++ ){
   let btnTemp = btns[i];
   let sectionTemp = sections[i];
   btnTemp.addEventListener('click', function (event) {

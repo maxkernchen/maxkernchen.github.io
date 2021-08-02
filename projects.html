@@ -27,8 +27,9 @@
             <li class = "project-btn selected">&lt;WifiRanger - C#/&gt;</li>
             <li class="project-btn">&lt;Spot My Mood - Android/&gt;</li>
             <li class="project-btn">&lt;Lynx - Go/&gt;</li>
+             <li class="project-btn">&lt;Live Reddit Comments - Django, Python/&gt;</li>
             <li class="project-btn">&lt;Notable College Projects/&gt;</li>
-            <li class="project-btn">&lt;In Progress Projects/&gt;</li>
+           
           </ul>
           <li>&lt;/Projects&gt;</li>
         </ul>
@@ -65,13 +66,13 @@
             <i class="fas fa-file-download hvr-icon"></i>
           </a>
         
-          <a href="https://github.com/maxkernchen/WifiRanger" class="hvr-icon-forward secondBtn">WifiRanger GitHub 
+          <a href="https://github.com/maxkernchen/WifiRanger" class="hvr-icon-forward secondbtn">WifiRanger GitHub 
             <i class="fab fa-github hvr-icon"></i>
           </a>
           <hr />  
         </section>
         <section class="project-section">
-            <h3 class="section__title">Spot My Mood </h3>
+            <h3>Spot My Mood </h3>
             <p class="project-p">Spot My Mood is an Android application which allows users to take a self image and display current emotions.
               These emotions are then connected to a Spotify playlist to best match them.
             </p>
@@ -87,12 +88,12 @@
             class="hvr-icon-forward playstore">Spot My Mood PlayStore <i class="fab fa-google-play hvr-icon">
             </i>
             </a>
-            <a href="https://github.com/maxkernchen/SpotMyMood" class="hvr-icon-forward secondBtn">
+            <a href="https://github.com/maxkernchen/SpotMyMood" class="hvr-icon-forward secondbtn">
             Spot My Mood GitHub <i class="fab fa-github hvr-icon"></i></a>
               <hr/> 
          </section>
         <section class="project-section">
-          <h3 id='lynx' class="section__title">Lynx </h3>
+          <h3 id='lynx'>Lynx </h3>
           <p class="project-p">Lynx is a Peer-to-Peer file synchronization application written using Go. 
             Using a shared meta file any machine running Lynx can receive and send files to other machines running Lynx. 
           </p>
@@ -108,7 +109,37 @@
           <hr/>      
         </section>
         <section class="project-section">
-          <h3 id="class_projects" class="section__title"> Other required college curriculum projects </h3>
+          <h3> Live Reddit Comments </h3>
+          <p class="project-p"> 
+              Live Reddit Comments is a Django web application which will allow a user to stream the newest 
+              comments from any Reddit submission, similar to live chat on Youtube.com or Twitch.com. 
+              This application utilizes the Reddit Python API library named
+               <a href="https://praw.readthedocs.io/en/stable/index.html" class="link project">PRAW</a>.
+          </p>
+          <p class="project-p">
+              It is currently hosted on a Digital Ocean Linux droplet which is linked below.
+              <br>
+              Features include:
+              <ul>
+                <li>Dark or Light Theme which is stored in a Cookie.</li>
+                <li>Option to change refresh rate of comments</li>
+                <li>Comments stop refreshing when scrolling and allow for a manual refresh</li>
+                <li>Home page contains top 5 most active submissions currently (submissions with least amount of time between comments).
+                These submissions cards contain a link to start streaming them directly.</li>
+              </ul>
+            <br>
+              Further techincal details on how the application was developed can be found on the GitHub page linked below.
+            <br>
+            <br>
+            <a href="https://github.com/maxkernchen/LiveRedditComments" class="hvr-icon-forward">
+            Live Reddit Comments<i class="fab fa-github hvr-icon"></i></a>
+            <a href="http://64.227.16.206:8000/index/" class="hvr-icon-forward linkhvr secondbtn">
+            Linux Droplet Link<i class="fas fa-external-link-alt hvr-icon"></i></a>
+          <p>
+        <hr/>      
+        </section>
+        <section class="project-section">
+          <h3 id="class_projects"> Other required college curriculum projects </h3>
           <p class="project-p"> Below is a list of some notable required projects and their associated college classes that I have completed.
               Since these are most likely still part of the Western Carolina Computer Science curriculum, I cannot post 
               the source code for these projects here to avoid cheating.
@@ -159,26 +190,6 @@
          <br>
          <hr/>
         </section>         
-        <section class="project-section">
-          <h3 class="section__title"> In Progress Projects. </h3>
-          <p class="project-p"> Below is a list of some project(s) which I am currently working now.
-              Since these are in progress there currently is not much documentation on them yet.
-              Please follow their repo pages on GitHub for recent updates.
-          </p>
-          <ul>
-            <li>
-              Live Reddit Comments - Using the popular social media platform's API named <a class="link project" href ="https://praw.readthedocs.io/en/latest/">PRAW</a>, 
-              I am building a web application which will frequently stream newest comments in a thread.
-              Similar applications have already been built, my plan is to make the experience more simplistic and include full screen functionality.
-              Main usages would be to stream comments from live sports or news events.
-              Written in Python using Django, see below for link to the project's GitHub. 
-              <br>
-              <br>
-              <a href="https://github.com/maxkernchen/LiveRedditComments" class="hvr-icon-forward">
-              Live Reddit Comments<i class="fab fa-github hvr-icon"></i></a>
-            </li>
-          </ul>
-        </section>
        </article>
        <script src="max.kernchen.github.io.projects.js"></script>
   </body>

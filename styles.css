@@ -396,7 +396,12 @@ textarea:focus, input:focus{
 .hvr-icon-forward.playstore{
   background-color: var(--playstore-color) ;
 }
-.hvr-icon-forward.secondBtn{
+.hvr-icon-forward.linkhvr{
+  background-color: var(--accent-color-project);
+}
+
+
+.hvr-icon-forward.secondbtn{
   margin-left: 75px;
 }
 
