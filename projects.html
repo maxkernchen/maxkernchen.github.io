@@ -24,7 +24,7 @@
         <ul>
           <li>&lt;Projects&gt;</li>
           <ul>
-            <li class = "project-btn selected">&lt;WifiRanger - C#/&gt;</li>
+            <li class = "project-btn selected">&lt;Wifi Ranger - C#/&gt;</li>
             <li class="project-btn">&lt;Walking Alarm - Android/&gt;</li>
             <li class="project-btn">&lt;Lynx - Go/&gt;</li>
              <li class="project-btn">&lt;Live Reddit Comments - Django, Python/&gt;</li>
@@ -37,9 +37,9 @@
       </div>
       <article id="project-content">
         <section class="project-section">
-          <h3>WifiRanger</h3>
+          <h3>Wifi Ranger</h3>
           
-          <p class="project-p">WifiRanger is a C# WPF project which calculates the approximate percentage 
+          <p class="project-p">Wifi Ranger is a C# WPF project which calculates the approximate percentage 
             of WiFi coverage for a given router and floor plan.
           It uses Walmart JSON Web Services to retrieve up to date prices 
           and store links for a current list of 10 popular routers.
@@ -49,20 +49,24 @@
             <a class="link project" href ="https://en.wikipedia.org/wiki/Free-space_path_loss#Free-space_path_loss_in_decibels">
               free-space path loss</a> formula which adds the natural log of the router's power to it.
               Some basic real world testing using simple Android applications proved this method to be fairly accurate. Below is the current formula
-               WifiRanger uses to calculate the distance, in one direction, covered in meters.
+               Wifi Ranger uses to calculate the distance, in one direction, covered in meters.
                </p>
              <p class="project-p MathJax">$$m = 10^{\frac{(27.55 - (20 \cdot \log(frequencyMHz) + |dBm| +\ln(power)))}{20}}$$</p>
              <p class="project-p">Frequency is between 2400 - 5800 megahertz for most routers, dBm or decibel-milliwatts is 
                usually -57 which is the lowest Wifi strength for reliable packet delivery.
                Power is different for every router, most of the time higher power = higher range. 
              </p>
-             <p class="project-p">
-                WifiRanger is currently being updated to use a new API endpoint, it should be avaiable soon to install again.
-                Please review the below GitHub link for progress.
+              <p class="project-p">
+               You can download the installer for Wifi Ranger below. Where you will also find a link to the
+                 Wifi Ranger GitHub page.
              </p>
              <br>            
+          <a href="https://github.com/maxkernchen/WifiRanger/releases/download/1.0/WifiRangerInstaller.zip" 
+          class="hvr-icon-down">Download Wifi Ranger 
+            <i class="fas fa-file-download hvr-icon"></i>
+          </a>  
         
-          <a href="https://github.com/maxkernchen/WifiRanger" class="hvr-icon-forward">WifiRanger GitHub 
+          <a href="https://github.com/maxkernchen/WifiRanger" class="hvr-icon-forward secondbtn">Wifi Ranger GitHub 
             <i class="fab fa-github hvr-icon"></i>
           </a>
           <hr />  
