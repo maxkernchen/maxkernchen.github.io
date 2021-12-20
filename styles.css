@@ -73,15 +73,15 @@ nav {
   color: var(--white-color);
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 40px auto;  
-  row-gap: 22px;
+  grid-template-rows: 60px auto;  
+  row-gap: 10px;
   grid-template-areas:
       'menu-area-project'
       'content-project'
 }
 
 .project-menu{
-  margin: 0;
+ 
   text-align: left;
   overflow: hidden;
   list-style: none;
